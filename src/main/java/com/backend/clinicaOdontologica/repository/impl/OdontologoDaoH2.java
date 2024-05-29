@@ -4,11 +4,14 @@ import com.backend.clinicaOdontologica.entity.Odontologo;
 import com.backend.clinicaOdontologica.repository.IDao;
 import com.backend.clinicaOdontologica.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
+
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class OdontologoDaoH2 implements IDao<Odontologo> {
     private final Logger LOGGER = Logger.getLogger(OdontologoDaoH2.class);
 

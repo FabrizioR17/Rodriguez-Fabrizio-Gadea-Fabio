@@ -24,3 +24,27 @@ Id: 8 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez]
 Id: 9 - Numero_matricula: 544478 - Nombre: Pomelo - Apellido: Rosa
 [2024-05-25 21:29:14] [ INFO ] [TurnoEnH2:69] Se ha registrado el turno correctamente.Id: 6 - Paciente: Id: 8 - Nombre: Sofia - Apellido: Barreto - DNI: 5548757 - Fechas de ingreso: 2022-05-02 - Domicilio: Id: 8 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia - Odontologo: 
 Id: 9 - Numero_matricula: 544478 - Nombre: Pomelo - Apellido: Rosa - Fecha y hora: 2024-06-30T05:01:10
+[2024-05-26 17:09:33] [ INFO ] [OdontologoDaoH2:40] Odontólogo registrado correctamente: 
+Id: 5 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-26 17:09:34] [ INFO ] [OdontologoDaoH2:90] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-26 17:09:41] [ INFO ] [DomicilioDaoH2:108] Se ha encontrado el domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2024-05-26 17:09:41] [ INFO ] [DomicilioDaoH2:108] Se ha encontrado el domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2024-05-26 17:09:41] [ INFO ] [PacienteDaoH2:147] Listado de todos los pacientes: [Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur]
+[2024-05-26 17:09:42] [ INFO ] [DomicilioDaoH2:51] Se ha registrado el domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2024-05-26 17:09:42] [ INFO ] [PacienteDaoH2:59] Se ha registrado el paciente: Id: 3 - Nombre: Nombre - Apellido: Apellido - DNI: 7891011 - Fechas de ingreso: 2023-05-02 - Domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2024-05-26 17:09:49] [ INFO ] [DomicilioDaoH2:51] Se ha registrado el domicilio: Id: 4 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2024-05-26 17:09:49] [ INFO ] [PacienteDaoH2:59] Se ha registrado el paciente: Id: 4 - Nombre: Sofia - Apellido: Barreto - DNI: 5548757 - Fechas de ingreso: 2022-05-02 - Domicilio: Id: 4 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2024-05-26 17:09:49] [ INFO ] [OdontologoDaoH2:40] Odontólogo registrado correctamente: 
+Id: 6 - Numero_matricula: 544478 - Nombre: Pomelo - Apellido: Rosa
+[2024-05-26 17:09:49] [ INFO ] [TurnoEnH2:70] Se ha registrado el turno correctamente.Id: 2 - Paciente: Id: 4 - Nombre: Sofia - Apellido: Barreto - DNI: 5548757 - Fechas de ingreso: 2022-05-02 - Domicilio: Id: 4 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia - Odontologo: 
+Id: 6 - Numero_matricula: 544478 - Nombre: Pomelo - Apellido: Rosa - Fecha y hora: 2024-06-30T05:01:10
+[2024-05-26 17:09:49] [ INFO ] [DomicilioDaoH2:108] Se ha encontrado el domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2024-05-26 17:09:49] [ INFO ] [DomicilioDaoH2:108] Se ha encontrado el domicilio: Id: 4 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2024-05-26 17:09:49] [ INFO ] [TurnoEnH2:129] Listado de todos los Turnos registrados: [Id: 1 - Paciente: Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts - Odontologo: 
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES - Fecha y hora: 2024-12-31T23:59:59, Id: 2 - Paciente: Id: 4 - Nombre: Sofia - Apellido: Barreto - DNI: 5548757 - Fechas de ingreso: 2022-05-02 - Domicilio: Id: 4 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia - Odontologo: 
+Id: 6 - Numero_matricula: 544478 - Nombre: Pomelo - Apellido: Rosa - Fecha y hora: 2024-06-30T05:01:10]

@@ -7,11 +7,13 @@ import com.backend.clinicaOdontologica.entity.Turno;
 import com.backend.clinicaOdontologica.repository.IDao;
 import com.backend.clinicaOdontologica.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class TurnoDaoH2 implements IDao<Turno> {
     private PacienteDaoH2 pacienteDaoH2;
     private OdontologoDaoH2 odontologoDaoH2;

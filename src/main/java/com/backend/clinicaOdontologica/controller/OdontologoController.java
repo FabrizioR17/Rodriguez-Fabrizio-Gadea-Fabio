@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("odontologos")
+@RequestMapping("/odontologos")
 public class OdontologoController {
 
     private IOdontologoService odontologoService;

@@ -5,12 +5,17 @@ import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaOdontologica.entity.Turno;
 import com.backend.clinicaOdontologica.repository.IDao;
 import com.backend.clinicaOdontologica.service.ITurnoService;
+import org.springframework.stereotype.Service;
+
+
 
 import java.util.List;
 
+@Service
 public class TurnoService implements ITurnoService {
 
 private IDao<Turno> turnoIDao;
+
 
     public TurnoService(IDao<Turno> turnoIDao) {
         this.turnoIDao = turnoIDao;

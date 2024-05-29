@@ -5,9 +5,11 @@ import com.backend.clinicaOdontologica.dto.salida.OdontologoSalidaDto;
 import com.backend.clinicaOdontologica.entity.Odontologo;
 import com.backend.clinicaOdontologica.repository.IDao;
 import com.backend.clinicaOdontologica.service.IOdontologoService;
+import org.springframework.stereotype.Service;
+
 
 import java.util.List;
-
+@Service
 public class OdontologoService implements IOdontologoService {
     private IDao<Odontologo> odontologoIDao;
 
@@ -24,6 +26,11 @@ public class OdontologoService implements IOdontologoService {
     public List<OdontologoSalidaDto> listarOdontologos() {
         return null;
     }
+}
+
+
+
+
 
 
   /*  @Override
@@ -36,7 +43,6 @@ public class OdontologoService implements IOdontologoService {
     public List<OdontologoSalidaDto> listarOdontologos() {
        // return odontologoIDao.listarTodos();
         return null;
-  */  }
+  */
 
 
-}

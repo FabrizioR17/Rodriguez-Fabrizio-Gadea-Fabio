@@ -6,10 +6,14 @@ import com.backend.clinicaOdontologica.entity.Paciente;
 import com.backend.clinicaOdontologica.repository.IDao;
 import org.apache.log4j.Logger;
 
+import org.springframework.stereotype.Repository;
+
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class PacienteDaoH2 implements IDao<Paciente> {
     private final Logger LOGGER = Logger.getLogger(PacienteDaoH2.class);
 

@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/pacientes")
 public class PacienteController {
 
     private IPacienteService pacienteService;
@@ -23,7 +23,7 @@ public class PacienteController {
         return pacienteService.registrarPaciente(pacienteEntradaDto);
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<PacienteSalidaDto> listarPacientes(){
         return pacienteService.listarPacientes();
     }
