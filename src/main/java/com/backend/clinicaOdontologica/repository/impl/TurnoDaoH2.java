@@ -12,21 +12,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TurnoEnH2 implements IDao<Turno> {
+public class TurnoDaoH2 implements IDao<Turno> {
     private PacienteDaoH2 pacienteDaoH2;
     private OdontologoDaoH2 odontologoDaoH2;
-    private final Logger LOGGER = Logger.getLogger(TurnoEnH2.class);
+    private final Logger LOGGER = Logger.getLogger(TurnoDaoH2.class);
 
-
-    @Override
-    public Turno registrarOdontologo(Turno turno) {
-        return null;
-    }
-
-    @Override
-    public List<Turno> listarOdontologo() {
-        return List.of();
-    }
 
 
     @Override
@@ -50,7 +40,7 @@ public class TurnoEnH2 implements IDao<Turno> {
             Paciente pacienteRegistrado = pacienteDaoH2.registrar(turno.getPaciente());
 
             odontologoDaoH2 = new OdontologoDaoH2();
-            Odontologo odontologoRegistrado = odontologoDaoH2.registrarOdontologo(turno.getOdontologo());
+            Odontologo odontologoRegistrado = odontologoDaoH2.registrar(turno.getOdontologo());
 
             PreparedStatement preparedStatement = connection.prepareStatement(" INSERT INTO TURNOS (PACIENTE_ID, ODONTOLOGO_ID, FECHA_HORA) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setLong(1, pacienteRegistrado.getId());

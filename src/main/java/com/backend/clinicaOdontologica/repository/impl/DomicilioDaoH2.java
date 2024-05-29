@@ -14,16 +14,6 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
 
 
     @Override
-    public Domicilio registrarOdontologo(Domicilio domicilio) {
-        return null;
-    }
-
-    @Override
-    public List<Domicilio> listarOdontologo() {
-        return null;
-    }
-
-    @Override
     public Domicilio registrar(Domicilio domicilio) {
         Connection connection = null;
         Domicilio domicilioRegistrado = null;

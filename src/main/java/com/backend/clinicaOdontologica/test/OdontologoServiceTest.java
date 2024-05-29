@@ -14,7 +14,7 @@ public class OdontologoServiceTest {
     @Test
     public void deberiaRetornarseUnaListaNoVaciaDeOdontologosEnH2() {
         odontologoService = new OdontologoService(new OdontologoDaoH2());
-        assertFalse(odontologoService.listarOdontologo().isEmpty());
+        assertFalse(odontologoService.listarTodos().isEmpty());
 
     }
 
@@ -24,7 +24,7 @@ public class OdontologoServiceTest {
 
         Odontologo odontologo = new Odontologo(12345, "Juan", "Perez");
 
-        Odontologo odontoloRegistrado = odontologoService.registrarOdontologo(odontologo);
+        Odontologo odontoloRegistrado = odontologoService.registrar(odontologo);
 
         assertNotNull(odontoloRegistrado.getId());
     }

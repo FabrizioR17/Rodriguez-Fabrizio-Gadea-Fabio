@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IOdontologoService {
 
-    Odontologo registrarOdontologo(Odontologo odontologo);
-    List<Odontologo> listarOdontologo();
+    Odontologo registrar(Odontologo odontologo);
+    List<Odontologo> listarTodos();
 
 }

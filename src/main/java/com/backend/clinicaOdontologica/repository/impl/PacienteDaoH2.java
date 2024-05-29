@@ -17,16 +17,6 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
 
     @Override
-    public Paciente registrarOdontologo(Paciente paciente) {
-        return null;
-    }
-
-    @Override
-    public List<Paciente> listarOdontologo() {
-        return null;
-    }
-
-    @Override
     public Paciente registrar(Paciente paciente) {
         Connection connection = null;
         Paciente pacienteRegistrado = null;
