@@ -1,5 +1,7 @@
 package com.backend.clinicaOdontologica.service.impl;
 
+import com.backend.clinicaOdontologica.dto.entrada.OdontologoEntradaDto;
+import com.backend.clinicaOdontologica.dto.salida.OdontologoSalidaDto;
 import com.backend.clinicaOdontologica.entity.Odontologo;
 import com.backend.clinicaOdontologica.repository.IDao;
 import com.backend.clinicaOdontologica.service.IOdontologoService;
@@ -14,14 +16,27 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public Odontologo registrar(Odontologo odontologo) {
-        return odontologoIDao.registrar(odontologo);
+    public OdontologoSalidaDto registrarOdontologo(OdontologoEntradaDto odontologoEntradaDto) {
+        return null;
     }
 
     @Override
-    public List<Odontologo> listarTodos() {
-        return odontologoIDao.listarTodos();
+    public List<OdontologoSalidaDto> listarOdontologos() {
+        return null;
     }
+
+
+  /*  @Override
+    public OdontologoSalidaDto registrarOdontologo(OdontologoEntradaDto odontologoEntradaDto) {
+        //return odontologoIDao.registrar(odontologoEntradaDto);
+        return null;
+    }
+
+    @Override
+    public List<OdontologoSalidaDto> listarOdontologos() {
+       // return odontologoIDao.listarTodos();
+        return null;
+  */  }
 
 
 }

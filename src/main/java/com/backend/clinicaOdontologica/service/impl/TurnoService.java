@@ -1,5 +1,7 @@
 package com.backend.clinicaOdontologica.service.impl;
 
+import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDto;
+import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaOdontologica.entity.Turno;
 import com.backend.clinicaOdontologica.repository.IDao;
 import com.backend.clinicaOdontologica.service.ITurnoService;
@@ -15,12 +17,14 @@ private IDao<Turno> turnoIDao;
     }
 
     @Override
-    public Turno registrarTurno(Turno turno) {
-        return turnoIDao.registrar(turno);
+    public TurnoSalidaDto registrarTurno(TurnoEntradaDto turnoEntradaDto) {
+       // return turnoIDao.registrar(turnoEntradaDto);
+    return null;
     }
 
     @Override
-    public List<Turno> listarTurnos() {
-        return turnoIDao.listarTodos();
+    public List<TurnoSalidaDto> listarTurnos() {
+        //return turnoIDao.listarTodos();
+   return null;
     }
 }

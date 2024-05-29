@@ -1,12 +1,13 @@
 package com.backend.clinicaOdontologica.service;
 
-import com.backend.clinicaOdontologica.entity.Turno;
+import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDto;
+import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 
 import java.util.List;
 
 public interface ITurnoService {
 
-    Turno registrarTurno(Turno turno);
-    List<Turno> listarTurnos();
+    TurnoSalidaDto registrarTurno(TurnoEntradaDto turnoEntradaDto);
+    List<TurnoSalidaDto> listarTurnos();
 
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping
 public class PacienteController {
 
-    private final IPacienteService pacienteService;
+    private IPacienteService pacienteService;
 
     public PacienteController(IPacienteService pacienteService) {
         this.pacienteService = pacienteService;
