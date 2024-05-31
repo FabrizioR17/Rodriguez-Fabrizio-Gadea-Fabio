@@ -8,6 +8,9 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
+    public Domicilio() {
+    }
+
     public Domicilio(String calle, int numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
@@ -65,6 +68,6 @@ public class Domicilio {
 
     @Override
     public String toString() {
-        return "Id: " + id + " - Calle: " + calle + " - Numero: " + numero + " - Localidad: " + localidad + " - Provincia: " + provincia;
+        return "\nId: " + id + " - Calle: " + calle + " - Numero: " + numero + " - Localidad: " + localidad + " - Provincia: " + provincia;
     }
 }

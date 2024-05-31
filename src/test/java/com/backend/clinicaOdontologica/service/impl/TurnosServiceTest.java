@@ -1,19 +1,4 @@
-package com.backend.clinicaOdontologica.test;
-
-import com.backend.clinicaOdontologica.entity.Odontologo;
-import com.backend.clinicaOdontologica.entity.Turno;
-import com.backend.clinicaOdontologica.repository.impl.TurnoDaoH2;
-
-import com.backend.clinicaOdontologica.entity.Domicilio;
-import com.backend.clinicaOdontologica.entity.Paciente;
-
-import com.backend.clinicaOdontologica.service.impl.TurnoService;
-import org.junit.Test;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-import static org.junit.Assert.*;
+package com.backend.clinicaOdontologica.service.impl;
 
 public class TurnosServiceTest {
     private TurnoService turnoService;

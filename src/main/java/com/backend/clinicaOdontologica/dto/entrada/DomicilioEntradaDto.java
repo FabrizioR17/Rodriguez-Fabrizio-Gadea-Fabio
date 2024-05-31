@@ -61,4 +61,9 @@ public class DomicilioEntradaDto {
         this.provincia = provincia;
     }
 
+    @Override
+    public String toString() {
+        return "\nCalle: " + calle + " - Numero: " + numero + " - Localidad: " + localidad + " - Provincia: " + provincia;
+    }
+
 }

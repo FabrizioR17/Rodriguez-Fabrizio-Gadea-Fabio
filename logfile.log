@@ -48,3 +48,25 @@ Id: 6 - Numero_matricula: 544478 - Nombre: Pomelo - Apellido: Rosa - Fecha y hor
 [2024-05-26 17:09:49] [ INFO ] [TurnoEnH2:129] Listado de todos los Turnos registrados: [Id: 1 - Paciente: Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts - Odontologo: 
 Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES - Fecha y hora: 2024-12-31T23:59:59, Id: 2 - Paciente: Id: 4 - Nombre: Sofia - Apellido: Barreto - DNI: 5548757 - Fechas de ingreso: 2022-05-02 - Domicilio: Id: 4 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia - Odontologo: 
 Id: 6 - Numero_matricula: 544478 - Nombre: Pomelo - Apellido: Rosa - Fecha y hora: 2024-06-30T05:01:10]
+[2024-05-30 22:38:52] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-30 23:09:17] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-30 23:13:56] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-30 23:13:57] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-30 23:18:02] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 3 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-30 23:18:02] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-30 23:31:14] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 4 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez
+[2024-05-30 23:31:14] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez]

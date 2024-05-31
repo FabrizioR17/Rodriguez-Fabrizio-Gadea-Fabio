@@ -2,19 +2,22 @@ package com.backend.clinicaOdontologica.entity;
 
 public class Odontologo {
     private Long id;
-    private int numero_matricula;
+    private int numeroMatricula;
     private String nombre;
     private String apellido;
 
+    public Odontologo() {
+    }
+
     public Odontologo(Long id, int numero_matricula, String nombre, String apellido) {
         this.id = id;
-        this.numero_matricula = numero_matricula;
+        this.numeroMatricula = numero_matricula;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
     public Odontologo(int numero_matricula, String nombre, String apellido) {
-        this.numero_matricula = numero_matricula;
+        this.numeroMatricula = numero_matricula;
         this.nombre = nombre;
         this.apellido = apellido;
     }
@@ -28,11 +31,11 @@ public class Odontologo {
     }
 
     public int getNumero_matricula() {
-        return numero_matricula;
+        return numeroMatricula;
     }
 
     public void setNumero_matricula(int numero_matricula) {
-        this.numero_matricula = numero_matricula;
+        this.numeroMatricula = numero_matricula;
     }
 
     public String getNombre() {
@@ -53,7 +56,7 @@ public class Odontologo {
 
     @Override
     public String toString() {
-        return "\nId: " + id + " - Numero_matricula: " + numero_matricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
+        return "\nId: " + id + " - Numero_matricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
     }
 
 }

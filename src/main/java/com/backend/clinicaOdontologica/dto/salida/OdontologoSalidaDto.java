@@ -3,7 +3,7 @@ package com.backend.clinicaOdontologica.dto.salida;
 public class OdontologoSalidaDto {
 
     private Long id;
-    private int numero_matricula;
+    private int numeroMatricula;
     private String nombre;
     private String apellido;
 
@@ -19,11 +19,11 @@ public class OdontologoSalidaDto {
     }
 
     public int getNumero_matricula() {
-        return numero_matricula;
+        return numeroMatricula;
     }
 
     public void setNumero_matricula(int numero_matricula) {
-        this.numero_matricula = numero_matricula;
+        this.numeroMatricula = numero_matricula;
     }
 
     public String getNombre() {
@@ -40,5 +40,9 @@ public class OdontologoSalidaDto {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+    @Override
+    public String toString() {
+        return "\nNumero_matricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
     }
 }

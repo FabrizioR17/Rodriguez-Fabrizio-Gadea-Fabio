@@ -1,16 +1,4 @@
-package com.backend.clinicaOdontologica.test;
-
-import com.backend.clinicaOdontologica.dto.entrada.DomicilioEntradaDto;
-import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
-import com.backend.clinicaOdontologica.entity.Domicilio;
-import com.backend.clinicaOdontologica.entity.Paciente;
-import com.backend.clinicaOdontologica.repository.impl.PacienteDaoH2;
-import com.backend.clinicaOdontologica.service.impl.PacienteService;
-import org.junit.Test;
-
-import java.time.LocalDate;
-
-import static org.junit.Assert.*;
+package com.backend.clinicaOdontologica.service.impl;
 
 
 public class PacienteServiceTest {
