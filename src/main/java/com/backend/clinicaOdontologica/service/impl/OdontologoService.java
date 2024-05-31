@@ -17,7 +17,7 @@ import java.util.List;
 public class OdontologoService implements IOdontologoService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(PacienteService.class);
-    private IDao<Odontologo> odontologoIDao;
+    private final IDao<Odontologo> odontologoIDao;
     private final ModelMapper modelMapper;
 
     public OdontologoService(IDao<Odontologo> odontologoIDao, ModelMapper modelMapper) {
@@ -38,6 +38,7 @@ public class OdontologoService implements IOdontologoService {
     @Override
     public List<OdontologoSalidaDto> listarOdontologos() {
         List<OdontologoSalidaDto> odontologos = odontologoIDao.listarTodos().stream().map(odontolgo -> modelMapper.map(odontolgo, OdontologoSalidaDto.class)).toList();
+        LOGGER.info("Listado de todos los pacientes: {}", odontologos);
         return odontologos;
     }
 

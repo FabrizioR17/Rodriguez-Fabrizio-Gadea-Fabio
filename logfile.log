@@ -70,6 +70,11 @@ Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES,
 Id: 2 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
 Id: 3 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
 Id: 4 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez]
+[2024-05-30 21:47:35] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez
+[2024-05-30 21:47:35] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez]
 [2024-05-31 00:43:21] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
 Id: 2 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez
 [2024-05-31 00:43:21] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
@@ -231,3 +236,151 @@ Id: 12 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez,
 Id: 13 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
 [2024-05-31 02:02:13] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
 Id: 14 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 09:14:27] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 09:14:27] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 0 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 09:27:32] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2024-05-31 09:27:32] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2024-05-31 09:27:32] [ INFO ] [PacienteDaoH2:140] Listado de todos los pacientes: [
+Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, 
+Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur]
+[2024-05-31 09:30:20] [ INFO ] [DomicilioDaoH2:43] Se ha registrado el domicilio: 
+Id: 3 - Calle: Buendia - Numero: 4532 - Localidad: lima - Provincia: lima
+[2024-05-31 09:30:20] [ INFO ] [PacienteDaoH2:52] Se ha registrado el paciente: 
+Id: 3 - Nombre: Fabrizio - Apellido: Martinez - DNI: 12345678 - Fechas de ingreso: 2024-06-01 - Domicilio: 
+Id: 3 - Calle: Buendia - Numero: 4532 - Localidad: lima - Provincia: lima
+[2024-05-31 09:30:58] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 09:32:27] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 5021 - Nombre: Fabio - Apellido: Gadea
+[2024-05-31 09:41:00] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 09:41:17] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 09:41:35] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 5021 - Nombre: Fabrizio - Apellido: Rodriguez
+[2024-05-31 09:41:40] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 5021 - Nombre: Fabrizio - Apellido: Rodriguez]
+[2024-05-31 09:41:57] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 3 - numeroMatricula: 5021 - Nombre: Fabio - Apellido: Gadea
+[2024-05-31 09:41:59] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 5021 - Nombre: Fabrizio - Apellido: Rodriguez, 
+Id: 3 - numeroMatricula: 5021 - Nombre: Fabio - Apellido: Gadea]
+[2024-05-31 09:46:42] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 5021 - Nombre: Fabrizio - Apellido: Rodriguez, 
+Id: 3 - numeroMatricula: 5021 - Nombre: Fabio - Apellido: Gadea]
+[2024-05-31 10:11:25] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:14:52] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:16:31] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:17:36] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:17:54] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:18:28] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:18:30] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:19:21] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:21:03] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:21:37] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:25:15] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:33:42] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea
+[2024-05-31 10:35:36] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 2000 - Nombre: Fabio - Apellido: Gadea
+[2024-05-31 10:35:42] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 2000 - Nombre: Fabio - Apellido: Gadea]
+[2024-05-31 10:37:05] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 10:37:20] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea
+[2024-05-31 10:37:28] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea]
+[2024-05-31 12:24:03] [ INFO ] [DomicilioDaoH2:43] Se ha registrado el domicilio: 
+Id: 3 - Calle: calle los olivos - Numero: 160 - Localidad: lima - Provincia: Lima
+[2024-05-31 12:24:03] [ INFO ] [PacienteDaoH2:52] Se ha registrado el paciente: 
+Id: 3 - Nombre: fabrizio - Apellido: rodriguez - DNI: 12345678 - Fechas de ingreso: 2024-05-31 - Domicilio: 
+Id: 3 - Calle: calle los olivos - Numero: 160 - Localidad: lima - Provincia: Lima
+[2024-05-31 12:24:56] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2024-05-31 12:24:56] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2024-05-31 12:24:56] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 3 - Calle: calle los olivos - Numero: 160 - Localidad: lima - Provincia: Lima
+[2024-05-31 12:24:56] [ INFO ] [PacienteDaoH2:140] Listado de todos los pacientes: [
+Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, 
+Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur, 
+Id: 3 - Nombre: fabrizio - Apellido: rodriguez - DNI: 12345678 - Fechas de ingreso: 2024-05-31 - Domicilio: 
+Id: 3 - Calle: calle los olivos - Numero: 160 - Localidad: lima - Provincia: Lima]
+[2024-05-31 12:27:09] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 12:39:25] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea
+[2024-05-31 12:39:29] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea]
+[2024-05-31 12:40:11] [ INFO ] [DomicilioDaoH2:43] Se ha registrado el domicilio: 
+Id: 3 - Calle: los montes - Numero: 123 - Localidad: lima - Provincia: lima
+[2024-05-31 12:40:11] [ INFO ] [PacienteDaoH2:52] Se ha registrado el paciente: 
+Id: 3 - Nombre: adsasd - Apellido: adsad - DNI: 12345679 - Fechas de ingreso: 2024-05-31 - Domicilio: 
+Id: 3 - Calle: los montes - Numero: 123 - Localidad: lima - Provincia: lima
+[2024-05-31 12:41:20] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]
+[2024-05-31 12:41:37] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea
+[2024-05-31 12:41:42] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea]
+[2024-05-31 12:42:06] [ INFO ] [DomicilioDaoH2:43] Se ha registrado el domicilio: 
+Id: 3 - Calle: los montes - Numero: 123 - Localidad: lima - Provincia: lima
+[2024-05-31 12:42:06] [ INFO ] [PacienteDaoH2:52] Se ha registrado el paciente: 
+Id: 3 - Nombre: adsasd - Apellido: adsad - DNI: 12345679 - Fechas de ingreso: 2024-05-31 - Domicilio: 
+Id: 3 - Calle: los montes - Numero: 123 - Localidad: lima - Provincia: lima
+[2024-05-31 12:42:16] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2024-05-31 12:42:16] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2024-05-31 12:42:16] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 3 - Calle: los montes - Numero: 123 - Localidad: lima - Provincia: lima
+[2024-05-31 12:42:16] [ INFO ] [PacienteDaoH2:140] Listado de todos los pacientes: [
+Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, 
+Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur, 
+Id: 3 - Nombre: adsasd - Apellido: adsad - DNI: 12345679 - Fechas de ingreso: 2024-05-31 - Domicilio: 
+Id: 3 - Calle: los montes - Numero: 123 - Localidad: lima - Provincia: lima]
+[2024-05-31 12:42:25] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea]
+[2024-05-31 12:42:47] [ INFO ] [DomicilioDaoH2:43] Se ha registrado el domicilio: 
+Id: 4 - Calle: Buendia - Numero: 4532 - Localidad: lima - Provincia: lima
+[2024-05-31 12:42:47] [ INFO ] [PacienteDaoH2:52] Se ha registrado el paciente: 
+Id: 4 - Nombre: Fabrizio - Apellido: Martinez - DNI: 12349828 - Fechas de ingreso: 2024-06-01 - Domicilio: 
+Id: 4 - Calle: Buendia - Numero: 4532 - Localidad: lima - Provincia: lima
+[2024-05-31 12:43:11] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 3 - numeroMatricula: 1003 - Nombre: marco - Apellido: polo
+[2024-05-31 12:43:15] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea, 
+Id: 3 - numeroMatricula: 1003 - Nombre: marco - Apellido: polo]
