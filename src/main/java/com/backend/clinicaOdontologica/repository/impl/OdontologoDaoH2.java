@@ -25,13 +25,13 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
             connection.setAutoCommit(false);
 
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ODONTOLOGOS (NUMERO_MATRICULA,NOMBRE, APELLIDO) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setInt(1, odontologo.getNumero_matricula());
+            preparedStatement.setInt(1, odontologo.getNumeroMatricula());
             preparedStatement.setString(2, odontologo.getNombre());
             preparedStatement.setString(3, odontologo.getApellido());
 
             preparedStatement.execute();
 
-            odontoloRegistrado = new Odontologo(odontologo.getNumero_matricula(), odontologo.getNombre(), odontologo.getApellido());
+            odontoloRegistrado = new Odontologo(odontologo.getNumeroMatricula(), odontologo.getNombre(), odontologo.getApellido());
 
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             while (resultSet.next()) {

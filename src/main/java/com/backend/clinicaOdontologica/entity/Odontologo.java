@@ -9,15 +9,15 @@ public class Odontologo {
     public Odontologo() {
     }
 
-    public Odontologo(Long id, int numero_matricula, String nombre, String apellido) {
+    public Odontologo(Long id, int numeroMatricula, String nombre, String apellido) {
         this.id = id;
-        this.numeroMatricula = numero_matricula;
+        this.numeroMatricula = numeroMatricula;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public Odontologo(int numero_matricula, String nombre, String apellido) {
-        this.numeroMatricula = numero_matricula;
+    public Odontologo(int numeroMatricula, String nombre, String apellido) {
+        this.numeroMatricula = numeroMatricula;
         this.nombre = nombre;
         this.apellido = apellido;
     }
@@ -30,12 +30,12 @@ public class Odontologo {
         this.id = id;
     }
 
-    public int getNumero_matricula() {
+    public int getNumeroMatricula() {
         return numeroMatricula;
     }
 
-    public void setNumero_matricula(int numero_matricula) {
-        this.numeroMatricula = numero_matricula;
+    public void setNumeroMatricula(int numeroMatricula) {
+        this.numeroMatricula = numeroMatricula;
     }
 
     public String getNombre() {
@@ -56,7 +56,7 @@ public class Odontologo {
 
     @Override
     public String toString() {
-        return "\nId: " + id + " - Numero_matricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
+        return "\nId: " + id + " - numeroMatricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
     }
 
 }

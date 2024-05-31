@@ -45,8 +45,6 @@ public class OdontologoService implements IOdontologoService {
 }
 
 
-
-
   /*  @Override
     public OdontologoSalidaDto registrarOdontologo(OdontologoEntradaDto odontologoEntradaDto) {
         //return odontologoIDao.registrar(odontologoEntradaDto);

@@ -30,8 +30,8 @@ public class OdontologoEntradaDto {
         return numeroMatricula;
     }
 
-    public void setNumero_matricula(int numero_matricula) {
-        this.numeroMatricula = numero_matricula;
+    public void setNumeroMatricula(int numeroMatricula) {
+        this.numeroMatricula = numeroMatricula;
     }
 
     public String getNombre() {
@@ -52,6 +52,6 @@ public class OdontologoEntradaDto {
 
     @Override
     public String toString() {
-        return "\nNumero_matricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
+        return "\nnumeroMatricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
     }
 }

@@ -10,6 +10,13 @@ public class OdontologoSalidaDto {
     public OdontologoSalidaDto() {
     }
 
+    public OdontologoSalidaDto(Long id, int numeroMatricula, String nombre, String apellido) {
+        this.id = id;
+        this.numeroMatricula = numeroMatricula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
     public Long getId() {
         return id;
     }
@@ -18,12 +25,12 @@ public class OdontologoSalidaDto {
         this.id = id;
     }
 
-    public int getNumero_matricula() {
+    public int getNumeroMatricula() {
         return numeroMatricula;
     }
 
-    public void setNumero_matricula(int numero_matricula) {
-        this.numeroMatricula = numero_matricula;
+    public void setNumeroMatricula(int numeroMatricula) {
+        this.numeroMatricula = numeroMatricula;
     }
 
     public String getNombre() {
@@ -41,8 +48,9 @@ public class OdontologoSalidaDto {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
     @Override
     public String toString() {
-        return "\nNumero_matricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
+        return "\nnumeroMatricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
     }
 }

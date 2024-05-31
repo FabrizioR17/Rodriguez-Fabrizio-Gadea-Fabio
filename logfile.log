@@ -70,3 +70,164 @@ Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES,
 Id: 2 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
 Id: 3 - Numero_matricula: 12345 - Nombre: Juan - Apellido: Perez, 
 Id: 4 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 00:43:21] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez
+[2024-05-31 00:43:21] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - Numero_matricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - Numero_matricula: 0 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 00:47:58] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 00:47:59] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 00:50:35] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 00:50:35] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:01:22] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 01:01:22] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:13:19] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:17:23] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 01:17:23] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:18:10] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 01:18:10] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:20:16] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 01:20:16] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:21:56] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 01:21:56] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:22:14] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 01:22:14] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:22:44] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 10 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 01:22:44] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 10 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:32:47] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 10 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:59:28] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 10 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 01:59:28] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 11 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 02:00:54] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 10 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 11 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 02:00:54] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 12 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 02:01:35] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 13 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-05-31 02:01:35] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 10 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 11 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 12 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 13 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 02:02:13] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
+Id: 2 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 3 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 4 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 5 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 6 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 7 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 8 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 9 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 10 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 11 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 12 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez, 
+Id: 13 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
+[2024-05-31 02:02:13] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
+Id: 14 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
