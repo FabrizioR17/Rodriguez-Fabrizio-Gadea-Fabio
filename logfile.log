@@ -231,3 +231,12 @@ Id: 12 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez,
 Id: 13 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez]
 [2024-05-31 02:02:13] [ INFO ] [OdontologoDaoH2:43] Odontólogo registrado correctamente: 
 Id: 14 - numeroMatricula: 12345 - Nombre: Juan - Apellido: Perez
+[2024-06-06 21:35:17] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2024-06-06 21:35:17] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2024-06-06 21:35:18] [ INFO ] [PacienteDaoH2:140] Listado de todos los pacientes: [
+Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, 
+Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: 
+Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur]
