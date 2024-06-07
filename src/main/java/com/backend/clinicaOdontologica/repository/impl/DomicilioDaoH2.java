@@ -1,6 +1,6 @@
 package com.backend.clinicaOdontologica.repository.impl;
 
-import com.backend.clinicaOdontologica.repository.dbconnection.H2Connection;
+import com.backend.clinicaOdontologica.dbconnection.H2Connection;
 import com.backend.clinicaOdontologica.entity.Domicilio;
 import com.backend.clinicaOdontologica.repository.IDao;
 import org.apache.log4j.Logger;
