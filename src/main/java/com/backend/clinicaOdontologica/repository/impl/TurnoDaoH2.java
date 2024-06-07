@@ -5,7 +5,7 @@ import com.backend.clinicaOdontologica.entity.Odontologo;
 import com.backend.clinicaOdontologica.entity.Paciente;
 import com.backend.clinicaOdontologica.entity.Turno;
 import com.backend.clinicaOdontologica.repository.IDao;
-import com.backend.clinicaOdontologica.repository.dbconnection.H2Connection;
+import com.backend.clinicaOdontologica.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 

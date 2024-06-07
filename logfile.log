@@ -384,3 +384,5 @@ Id: 3 - numeroMatricula: 1003 - Nombre: marco - Apellido: polo
 Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES, 
 Id: 2 - numeroMatricula: 1001 - Nombre: Fabio - Apellido: Gadea, 
 Id: 3 - numeroMatricula: 1003 - Nombre: marco - Apellido: polo]
+[2024-06-06 19:38:45] [ INFO ] [OdontologoDaoH2:93] Listado de todos los odontologos: [
+Id: 1 - numeroMatricula: 1000 - Nombre: NICOLAS - Apellido: GONZALES]

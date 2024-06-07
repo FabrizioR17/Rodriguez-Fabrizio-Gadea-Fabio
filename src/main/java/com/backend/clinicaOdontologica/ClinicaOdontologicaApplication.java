@@ -1,6 +1,6 @@
 package com.backend.clinicaOdontologica;
 
-import com.backend.clinicaOdontologica.repository.dbconnection.H2Connection;
+import com.backend.clinicaOdontologica.dbconnection.H2Connection;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
