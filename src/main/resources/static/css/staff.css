@@ -184,3 +184,8 @@ footer {
     color: #fff;
     text-decoration: none;
 }
+
+.descargar a img  {
+    width: 70px;
+    height: auto;
+}

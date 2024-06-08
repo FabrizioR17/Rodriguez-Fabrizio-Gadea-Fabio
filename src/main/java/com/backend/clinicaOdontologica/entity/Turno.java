@@ -10,10 +10,12 @@ public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "odontologo_id")
     private Odontologo odontologo;
     private LocalDateTime fechaHora;
@@ -27,6 +29,13 @@ public class Turno {
         this.odontologo = odontologo;
         this.fechaHora = fechaHora;
     }
+
+    public Turno(Paciente paciente, Odontologo odontologo, LocalDateTime fechaHora) {
+        this.paciente = paciente;
+        this.odontologo = odontologo;
+        this.fechaHora = fechaHora;
+    }
+
 
     public Long getId() {
         return id;
@@ -62,7 +71,7 @@ public class Turno {
 
     @Override
     public String toString() {
-        return "\nId: " + id + " - Paciente: " + paciente + " - Odontologo: " + odontologo + " - Fecha y hora: " + fechaHora ;
+        return "Id: " + id + " - Paciente: " + paciente + " - Odontologo: " + odontologo + " - Fecha y hora: " + fechaHora ;
     }
 
 }

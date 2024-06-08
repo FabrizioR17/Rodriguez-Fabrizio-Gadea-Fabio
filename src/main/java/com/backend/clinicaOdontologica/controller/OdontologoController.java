@@ -31,34 +31,22 @@ public class OdontologoController {
     public ResponseEntity<List<OdontologoSalidaDto>> listarOdontologos() {
         return new ResponseEntity<>(odontologoService.listarOdontologos(), HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")//localhost:8080/odontologos/x
+    public ResponseEntity<OdontologoSalidaDto> buscarOdontologoPorId(@PathVariable Long id){
+        return new ResponseEntity<>(odontologoService.buscarOdontologoPorId(id), HttpStatus.OK);
+    }
+
+    //PUT
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<OdontologoSalidaDto> actualizarOdontologo(@RequestBody @Valid OdontologoEntradaDto odontologoEntradaDto, @PathVariable Long id){
+        return new ResponseEntity<>(odontologoService.actualizarOdontologo(odontologoEntradaDto, id), HttpStatus.OK);
+    }
+
+    //DELETE
+    @DeleteMapping("/eliminar")//localhost:8080/odontologos/eliminar?id=x
+    public ResponseEntity<?> eliminarOdontologo(@RequestParam Long id){
+        odontologoService.eliminarOdontologo(id);
+        return new ResponseEntity<>("Odontologo eliminado correctamente", HttpStatus.NO_CONTENT);
+    }
 }
-//    @PostMapping("/registrar")
-//    public ResponseEntity<PacienteSalidaDto> registrarPaciente(@RequestBody @Valid PacienteEntradaDto pacienteEntradaDto){
-//        return new ResponseEntity<>(pacienteService.registrarPaciente(pacienteEntradaDto), HttpStatus.CREATED);
-//    }
-//
-//    @GetMapping("/listar")
-//    public ResponseEntity<List<PacienteSalidaDto>> listarPacientes(){
-//        return new ResponseEntity<>(pacienteService.listarPacientes(), HttpStatus.OK);
-//    }
-//
-//
-//    @GetMapping("/{id}")//localhost:8080/pacientes/x
-//    public ResponseEntity<PacienteSalidaDto> buscarPacientePorId(@PathVariable Long id){
-//        return new ResponseEntity<>(pacienteService.buscarPacientePorId(id), HttpStatus.OK);
-//    }
-//
-//    //PUT
-//    @PutMapping("/actualizar/{id}")
-//    public ResponseEntity<PacienteSalidaDto> actualizarPaciente(@RequestBody @Valid PacienteEntradaDto pacienteEntradaDto, @PathVariable Long id){
-//        return new ResponseEntity<>(pacienteService.actualizarPaciente(pacienteEntradaDto, id), HttpStatus.OK);
-//    }
-//
-//    //DELETE
-//    @DeleteMapping("/eliminar")//localhost:8080/pacientes/eliminar?id=x
-//    public ResponseEntity<?> eliminarPaciente(@RequestParam Long id){
-//        pacienteService.eliminarPaciente(id);
-//        return new ResponseEntity<>("Paciente eliminado correctamente", HttpStatus.NO_CONTENT);
-//    }
-//}
-//
