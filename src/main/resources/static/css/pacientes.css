@@ -43,6 +43,10 @@ nav ul li a {
     text-decoration: none;
 }
 
+.pacientes {
+    padding: 20px;
+}
+
 .tarjeta {
     width: calc(33.33% - 20px);
     background-color: #f0f0f0;
@@ -56,35 +60,31 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-.imagen-odontologo {
+.imagen-paciente {
     text-align: center;
 }
 
-.imagen-odontologo img {
+.imagen-paciente img {
     width: 30%;
     height: auto;
 }
 
-.informacion-odontologo {
+.informacion-paciente {
     text-align: center;
     margin-top: 10px;
 }
 
-.odontologos {
-    padding: 20px;
-}
-
-.odontologos::after {
+.pacientes::after {
     content: "";
     display: table;
     clear: both;
 }
 
-.buttons-odontologo {
+.buttons-paciente {
     margin-top: 10px;
 }
 
-.buttons-odontologo button {
+.buttons-paciente button {
     margin: 5px;
     padding: 10px;
     border: none;
@@ -100,83 +100,6 @@ nav ul li a {
 .btn-eliminar {
     background-color: red;
     color: white;
-}
-
-.slideshow {
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.slide {
-    display: flex;
-    margin-left: 150px;
-    margin-right: 150px;
-}
-
-.imagen {
-    flex: 1;
-    text-align: center;
-}
-
-.texto {
-    flex: 1;
-    text-align: left;
-    padding: 0 20px;
-}
-
-.slider .imagenes {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.slider .texto {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 20px;
-}
-
-.slider img {
-    width: 500px;
-    height: 350px;
-}
-
-/* Estilos para el texto dentro del slider */
-.texto {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-}
-
-.texto h2 {
-    color: #333;
-}
-
-.texto p {
-    color: #666;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
 }
 
 footer {
