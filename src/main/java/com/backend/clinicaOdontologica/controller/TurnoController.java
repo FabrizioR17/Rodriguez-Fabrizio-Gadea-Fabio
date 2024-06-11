@@ -1,6 +1,7 @@
 package com.backend.clinicaOdontologica.controller;
 
 import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDto;
+import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDtoId;
 import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaOdontologica.service.ITurnoService;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,8 @@ public class TurnoController {
     }
 
     @PostMapping("/registrar")
-    public ResponseEntity<TurnoSalidaDto> registrarTurno(@RequestBody @Valid TurnoEntradaDto turnoEntradaDto) {
-        return new ResponseEntity<>(turnoService.registrarTurno(turnoEntradaDto), HttpStatus.CREATED);
+    public ResponseEntity<TurnoSalidaDto> registrarTurno(@RequestBody @Valid TurnoEntradaDtoId turnoEntradaDtoId) {
+        return new ResponseEntity<>(turnoService.registrarTurno(turnoEntradaDtoId), HttpStatus.CREATED);
     }
 
     @GetMapping("/listar")

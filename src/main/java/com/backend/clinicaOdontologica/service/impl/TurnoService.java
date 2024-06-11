@@ -2,6 +2,7 @@ package com.backend.clinicaOdontologica.service.impl;
 
 import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDto;
+import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDtoId;
 import com.backend.clinicaOdontologica.dto.salida.OdontologoSalidaDto;
 import com.backend.clinicaOdontologica.dto.salida.PacienteSalidaDto;
 import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
@@ -123,26 +124,42 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
-    public TurnoSalidaDto registrarTurno(TurnoEntradaDto turnoEntradaDto) {
-        LOGGER.info("Datos de TurnoEntradaDto: " + turnoEntradaDto);
+    public TurnoSalidaDto registrarTurno(TurnoEntradaDtoId turnoEntradaDtoId) {
+        LOGGER.info("Datos de TurnoEntradaDto: " + turnoEntradaDtoId);
 
-        // Mapea las entidades
-        Paciente paciente = modelMapper.map(turnoEntradaDto.getPacienteEntradaDto(), Paciente.class);
-        Odontologo odontologo = modelMapper.map(turnoEntradaDto.getOdontologoEntradaDto(), Odontologo.class);
+        Long idPaciente = turnoEntradaDtoId.getIdPaciente();
 
-        // Guarda o actualiza Paciente y Odontologo
-        paciente = pacienteRepository.save(paciente);
-        odontologo = odontologoRepository.save(odontologo);
+        Long idOdontologo = turnoEntradaDtoId.getIdOdontologo();
 
-        // Crear y guardar el turno con las relaciones adecuadas
+        Paciente paciente = pacienteRepository.findById(idPaciente).orElse(null);
+        Odontologo odontologo = odontologoRepository.findById(idOdontologo).orElse(null);
+
         Turno turno = new Turno();
-        turno.setFechaHora(turnoEntradaDto.getFechaHora());
+        turno.setFechaHora(turnoEntradaDtoId.getFechaHora());
         turno.setPaciente(paciente);
         turno.setOdontologo(odontologo);
 
         Turno savedTurno = turnoRepository.save(turno);
 
-        // Mapea la salida
+
+
+//        // Mapea las entidades
+//        Paciente paciente = modelMapper.map(turnoEntradaDto.getPacienteEntradaDto(), Paciente.class);
+//        Odontologo odontologo = modelMapper.map(turnoEntradaDto.getOdontologoEntradaDto(), Odontologo.class);
+//
+//        // Guarda o actualiza Paciente y Odontologo
+//        paciente = pacienteRepository.save(paciente);
+//        odontologo = odontologoRepository.save(odontologo);
+//
+//        // Crear y guardar el turno con las relaciones adecuadas
+//        Turno turno = new Turno();
+//        turno.setFechaHora(turnoEntradaDto.getFechaHora());
+//        turno.setPaciente(paciente);
+//        turno.setOdontologo(odontologo);
+//
+//        Turno savedTurno = turnoRepository.save(turno);
+//
+//        // Mapea la salida
         TurnoSalidaDto turnoSalidaDto = modelMapper.map(savedTurno, TurnoSalidaDto.class);
         turnoSalidaDto.setPacienteSalidaDto(modelMapper.map(paciente, PacienteSalidaDto.class));
         turnoSalidaDto.setOdontologoSalidaDto(modelMapper.map(odontologo, OdontologoSalidaDto.class));
