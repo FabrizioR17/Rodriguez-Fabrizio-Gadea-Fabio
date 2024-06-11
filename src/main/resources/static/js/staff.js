@@ -20,7 +20,7 @@ async function fetchOdontologos() {
                 const infoDiv = document.createElement("div");
                 infoDiv.className = "informacion-odontologo";
                 const nameH2 = document.createElement("h2");
-                nameH2.textContent = `${odontologo.nombre} ${odontologo.apellido}`;
+                nameH2.textContent = `ID: ${odontologo.id} - ${odontologo.nombre} ${odontologo.apellido}`;
                 const matriculaP = document.createElement("p");
                 matriculaP.innerHTML = `<strong>Número de Matrícula:</strong> ${odontologo.numeroMatricula}`;
 

@@ -43,7 +43,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-.pacientes {
+.turnos {
     padding: 20px;
 }
 
@@ -60,31 +60,31 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-.imagen-paciente {
+.imagen-turno {
     text-align: center;
 }
 
-.imagen-paciente img {
+.imagen-turno img {
     width: 30%;
     height: auto;
 }
 
-.informacion-paciente {
+.informacion-turno {
     text-align: center;
     margin-top: 10px;
 }
 
-.pacientes::after {
+.turnos::after {
     content: "";
     display: table;
     clear: both;
 }
 
-.buttons-paciente {
+.buttons-turno {
     margin-top: 10px;
 }
 
-.buttons-paciente button {
+.buttons-turno button {
     margin: 5px;
     padding: 10px;
     border: none;

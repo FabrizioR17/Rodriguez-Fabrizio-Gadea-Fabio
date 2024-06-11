@@ -1,101 +1,115 @@
-document.addEventListener("DOMContentLoaded", function() {
-    async function fetchPacientes() {
-        try {
-            const response = await fetch("http://localhost:8080/pacientes/listar");
-            if (response.ok) {
-                const pacientes = await response.json();
-                const pacienteSelect = document.getElementById("paciente");
-                pacientes.forEach(paciente => {
-                    const option = document.createElement("option");
-                    option.value = JSON.stringify(paciente);  // Store entire paciente object
-                    option.text = `${paciente.nombre} ${paciente.apellido}`;
-                    pacienteSelect.appendChild(option);
-                });
-            } else {
-                console.error("Error fetching pacientes");
+async function fetchTurnos() {
+    const section = document.getElementById("turnos-section");
+
+    try {
+        const response = await fetch('http://localhost:8080/turnos/listar');
+        if (response.ok) {
+            const turnos = await response.json();
+            section.innerHTML = '';
+            for (const turno of turnos) {
+                console.log(`Turno data: ${JSON.stringify(turno)}`);
+                const paciente = await fetchPaciente(turno.pacienteSalidaDto.id); // Use pacienteSalidaDto.id
+                console.log(`Fetched paciente: ${JSON.stringify(paciente)}`);
+                const odontologo = await fetchOdontologo(turno.odontologoSalidaDto.id); // Use odontologoSalidaDto.id
+                console.log(`Fetched odontologo: ${JSON.stringify(odontologo)}`);
+
+                const card = document.createElement("div");
+                card.className = "tarjeta";
+
+                const imageDiv = document.createElement("div");
+                imageDiv.className = "imagen-turno";
+                const img = document.createElement("img");
+                img.src = "img/calendario.png";
+                img.alt = "Calendario del turno";
+                imageDiv.appendChild(img);
+
+                const infoDiv = document.createElement("div");
+                infoDiv.className = "informacion-turno";
+                const turnoIdP = document.createElement("p");
+                turnoIdP.innerHTML = `<strong>ID Turno:</strong> ${turno.id}`;
+                const odontologoP = document.createElement("p");
+                odontologoP.innerHTML = `<strong>Odontólogo:</strong> ${odontologo.nombre} ${odontologo.apellido}`;
+                const pacienteP = document.createElement("p");
+                pacienteP.innerHTML = `<strong>Paciente:</strong> ${paciente.nombre} ${paciente.apellido}`;
+                const fechaHoraP = document.createElement("p");
+                fechaHoraP.innerHTML = `<strong>Fecha y Hora:</strong> ${turno.fechaHora}`;
+
+                const buttonsDiv = document.createElement("div");
+                buttonsDiv.className = "buttons-turno";
+
+                const editButton = document.createElement("button");
+                editButton.textContent = "Editar";
+                editButton.className = "btn-editar";
+                editButton.onclick = () => window.location.href = `editarTurno.html?id=${turno.id}`;
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Eliminar";
+                deleteButton.className = "btn-eliminar";
+                deleteButton.onclick = () => {
+                    if (confirm("¿Está seguro de que desea eliminar este turno?")) {
+                        eliminarTurno(turno.id);
+                    }
+                };
+
+                buttonsDiv.appendChild(editButton);
+                buttonsDiv.appendChild(deleteButton);
+
+                infoDiv.appendChild(turnoIdP);
+                infoDiv.appendChild(odontologoP);
+                infoDiv.appendChild(pacienteP);
+                infoDiv.appendChild(fechaHoraP);
+                infoDiv.appendChild(buttonsDiv);
+
+                card.appendChild(imageDiv);
+                card.appendChild(infoDiv);
+
+                section.appendChild(card);
             }
-        } catch (error) {
-            console.error("Error:", error);
+        } else {
+            section.innerHTML = '<p>Error al obtener la lista de turnos</p>';
         }
+    } catch (error) {
+        section.innerHTML = `<p>Error: ${error.message}</p>`;
     }
+}
 
-    async function fetchOdontologos() {
-        try {
-            const response = await fetch("http://localhost:8080/odontologos/listar");
-            if (response.ok) {
-                const odontologos = await response.json();
-                const odontologoSelect = document.getElementById("odontologo");
-                odontologos.forEach(odontologo => {
-                    const option = document.createElement("option");
-                    option.value = JSON.stringify(odontologo);  // Store entire odontologo object
-                    option.text = `${odontologo.nombre} ${odontologo.apellido} (Matrícula: ${odontologo.numeroMatricula})`;
-                    odontologoSelect.appendChild(option);
-                });
-            } else {
-                console.error("Error fetching odontologos");
-            }
-        } catch (error) {
-            console.error("Error:", error);
+async function fetchPaciente(id) {
+    console.log(`Fetching paciente with id: ${id}`);
+    const response = await fetch(`http://localhost:8080/pacientes/${id}`);
+    if (response.ok) {
+        return response.json();
+    } else {
+        console.error(`Error fetching paciente with id: ${id}`);
+        return null;
+    }
+}
+
+async function fetchOdontologo(id) {
+    console.log(`Fetching odontologo with id: ${id}`);
+    const response = await fetch(`http://localhost:8080/odontologos/${id}`);
+    if (response.ok) {
+        return response.json();
+    } else {
+        console.error(`Error fetching odontologo with id: ${id}`);
+        return null;
+    }
+}
+
+async function eliminarTurno(id) {
+    try {
+        const response = await fetch(`http://localhost:8080/turnos/eliminar?id=${id}`, {
+            method: 'DELETE'
+        });
+        if (response.ok) {
+            alert('Turno eliminado correctamente');
+            fetchTurnos();
+        } else {
+            alert('Error al eliminar el turno');
         }
+    } catch (error) {
+        alert(`Error: ${error.message}`);
     }
+}
 
-    function getValidDomicilio(domicilio) {
-        return {
-            calle: domicilio && domicilio.calle ? domicilio.calle : "Sin calle",
-            numero: domicilio && domicilio.numero ? domicilio.numero : 1, // Assuming 1 is a valid default value
-            localidad: domicilio && domicilio.localidad ? domicilio.localidad : "Sin localidad",
-            provincia: domicilio && domicilio.provincia ? domicilio.provincia : "Sin provincia"
-        };
-    }
+document.addEventListener('DOMContentLoaded', fetchTurnos);
 
-    async function registerTurno(event) {
-        event.preventDefault();
-
-        const paciente = JSON.parse(document.getElementById("paciente").value);
-        const odontologo = JSON.parse(document.getElementById("odontologo").value);
-        let fechaHora = document.getElementById("fecha-hora").value;
-
-        // Replace 'T' with a space to match the expected format
-        fechaHora = fechaHora.replace('T', ' ');
-
-        const turno = {
-            fechaHora: fechaHora,
-            pacienteEntradaDto: {
-                nombre: paciente.nombre,
-                apellido: paciente.apellido,
-                dni: paciente.dni,
-                fechaIngreso: paciente.fechaIngreso,
-                domicilioEntradaDto: getValidDomicilio(paciente.domicilio)
-            },
-            odontologoEntradaDto: {
-                numeroMatricula: odontologo.numeroMatricula,
-                nombre: odontologo.nombre,
-                apellido: odontologo.apellido
-            }
-        };
-
-        try {
-            const response = await fetch("http://localhost:8080/turnos/registrar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(turno)
-            });
-
-            if (response.ok) {
-                alert("TURNO REGISTRADO CON ÉXITO!");
-            } else {
-                alert("ERROR AL REGISTRAR EL TURNO.");
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("ERROR AL REGISTRAR EL TURNO.");
-        }
-    }
-
-    fetchPacientes();
-    fetchOdontologos();
-
-    document.getElementById("turno-form").addEventListener("submit", registerTurno);
-});
