@@ -26,8 +26,8 @@ public class PacienteService implements IPacienteService {
         configureMapping();
     }
 
-  // @Override
-   // public Paciente registrarPaciente(Paciente paciente) { return pacienteIDao.registrar(paciente); }
+    // @Override
+    // public Paciente registrarPaciente(Paciente paciente) { return pacienteIDao.registrar(paciente); }
 
     @Override
     public PacienteSalidaDto registrarPaciente(PacienteEntradaDto pacienteEntradaDto) {
@@ -63,7 +63,7 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public void eliminarPaciente(Long id) {
+    public void eliminarPaciente(Long id){
         if(buscarPacientePorId(id) != null){
             pacienteRepository.deleteById(id);
             LOGGER.warn("Se ha eliminado el paciente con id {}", id);
