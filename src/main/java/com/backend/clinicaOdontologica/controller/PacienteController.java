@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pacientes")
+@CrossOrigin
 public class PacienteController {
 
     private final IPacienteService pacienteService;

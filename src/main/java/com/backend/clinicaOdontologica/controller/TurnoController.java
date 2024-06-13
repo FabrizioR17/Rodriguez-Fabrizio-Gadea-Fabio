@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/turnos")
+@CrossOrigin
 public class TurnoController {
 
 
