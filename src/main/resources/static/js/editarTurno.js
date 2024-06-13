@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const turnoId = urlParams.get('id');
 
     if (turnoId) {
-        fetchTurno(turnoId);
+        fetchOdontologos().then(() => {
+            fetchTurno(turnoId);
+        });
     } else {
         console.error('No se proporcionó un ID de turno.');
     }
@@ -20,14 +22,11 @@ async function fetchTurno(id) {
         if (response.ok) {
             const turno = await response.json();
             const paciente = await fetchPaciente(turno.pacienteSalidaDto.id);
-            const odontologo = await fetchOdontologo(turno.odontologoSalidaDto.id);
 
             document.getElementById('id').value = turno.id;
             document.getElementById('paciente').value = `${paciente.nombre} ${paciente.apellido}`;
-            document.getElementById('odontologo').value = `${odontologo.nombre} ${odontologo.apellido}`;
-            document.getElementById('fechaHora').value = turno.fechaHora; // Ajustar formato para el input
+            document.getElementById('fechaHora').value = turno.fechaHora.replace(' ', 'T');
 
-            // Agregar los detalles completos del paciente y odontólogo en campos ocultos
             document.getElementById('pacienteId').value = paciente.id;
             document.getElementById('pacienteNombre').value = paciente.nombre;
             document.getElementById('pacienteApellido').value = paciente.apellido;
@@ -35,10 +34,7 @@ async function fetchTurno(id) {
             document.getElementById('pacienteFechaIngreso').value = paciente.fechaIngreso;
             document.getElementById('pacienteDomicilio').value = JSON.stringify(paciente.domicilioSalidaDto);
 
-            document.getElementById('odontologoId').value = odontologo.id;
-            document.getElementById('odontologoNombre').value = odontologo.nombre;
-            document.getElementById('odontologoApellido').value = odontologo.apellido;
-            document.getElementById('odontologoNumeroMatricula').value = odontologo.numeroMatricula;
+            document.getElementById('odontologoSelect').value = turno.odontologoSalidaDto.id;
         } else {
             alert('Error al obtener los detalles del turno');
         }
@@ -62,54 +58,38 @@ async function fetchPaciente(id) {
     }
 }
 
-async function fetchOdontologo(id) {
+async function fetchOdontologos() {
     try {
-        const response = await fetch(`http://localhost:8080/odontologos/${id}`);
+        const response = await fetch(`http://localhost:8080/odontologos/listar`);
         if (response.ok) {
-            return await response.json();
+            const odontologos = await response.json();
+            const odontologoSelect = document.getElementById('odontologoSelect');
+
+            odontologos.forEach(odontologo => {
+                const option = document.createElement('option');
+                option.value = odontologo.id;
+                option.text = `${odontologo.nombre} ${odontologo.apellido}`;
+                odontologoSelect.appendChild(option);
+            });
         } else {
-            alert('Error al obtener los detalles del odontólogo');
-            return {};
+            alert('Error al obtener la lista de odontólogos');
         }
     } catch (error) {
         alert(`Error: ${error.message}`);
-        return {};
     }
 }
 
 async function actualizarTurno(id) {
     let fechaHora = document.getElementById('fechaHora').value;
     const pacienteId = document.getElementById('pacienteId').value;
-    const pacienteNombre = document.getElementById('pacienteNombre').value;
-    const pacienteApellido = document.getElementById('pacienteApellido').value;
-    const pacienteDni = document.getElementById('pacienteDni').value;
-    const pacienteFechaIngreso = document.getElementById('pacienteFechaIngreso').value;
-    const pacienteDomicilio = JSON.parse(document.getElementById('pacienteDomicilio').value);
+    const odontologoId = document.getElementById('odontologoSelect').value;
 
-    const odontologoId = document.getElementById('odontologoId').value;
-    const odontologoNombre = document.getElementById('odontologoNombre').value;
-    const odontologoApellido = document.getElementById('odontologoApellido').value;
-    const odontologoNumeroMatricula = document.getElementById('odontologoNumeroMatricula').value;
-
-    // Ajustar el formato de fechaHora para el backend
-    fechaHora = fechaHora.replace('T', ' '); // Asegurar el formato adecuado para LocalDateTime
+    fechaHora = fechaHora.replace('T', ' ');
 
     const data = {
-        fechaHora: fechaHora,
-        pacienteEntradaDto: {
-            id: pacienteId,
-            nombre: pacienteNombre,
-            apellido: pacienteApellido,
-            dni: pacienteDni,
-            fechaIngreso: pacienteFechaIngreso,
-            domicilioEntradaDto: pacienteDomicilio
-        },
-        odontologoEntradaDto: {
-            id: odontologoId,
-            nombre: odontologoNombre,
-            apellido: odontologoApellido,
-            numeroMatricula: odontologoNumeroMatricula
-        }
+        fechaHora,
+        idPaciente: pacienteId,
+        idOdontologo: odontologoId
     };
 
     try {
