@@ -37,21 +37,23 @@
             </tr>
             <tr>
                 <td><label for="odontologo">Odontólogo:</label></td>
-                <td><input type="text" id="odontologo" name="odontologo" disabled></td>
+                <td>
+                    <select id="odontologoSelect" name="odontologoId"></select>
+                </td>
             </tr>
             <tr>
                 <td><label for="fechaHora">Fecha y Hora:</label></td>
                 <td><input type="datetime-local" id="fechaHora" name="fechaHora"></td>
             </tr>
         </table>
-        <!-- Hidden fields -->
+        <!-- Hidden fields for patient details -->
         <input type="hidden" id="pacienteId" name="pacienteId">
         <input type="hidden" id="pacienteNombre" name="pacienteNombre">
         <input type="hidden" id="pacienteApellido" name="pacienteApellido">
         <input type="hidden" id="pacienteDni" name="pacienteDni">
         <input type="hidden" id="pacienteFechaIngreso" name="pacienteFechaIngreso">
         <input type="hidden" id="pacienteDomicilio" name="pacienteDomicilio">
-        <input type="hidden" id="odontologoId" name="odontologoId">
+        <!-- Hidden fields for odontologo details -->
         <input type="hidden" id="odontologoNombre" name="odontologoNombre">
         <input type="hidden" id="odontologoApellido" name="odontologoApellido">
         <input type="hidden" id="odontologoNumeroMatricula" name="odontologoNumeroMatricula">
@@ -76,4 +78,3 @@
 <script src="js/editarTurno.js"></script>
 </body>
 </html>
-
