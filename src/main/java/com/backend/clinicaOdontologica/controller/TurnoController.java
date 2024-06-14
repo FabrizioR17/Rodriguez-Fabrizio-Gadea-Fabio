@@ -44,13 +44,13 @@ public class TurnoController {
 
     //PUT
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<TurnoSalidaDto> actualizarTurno(@RequestBody @Valid TurnoEntradaDto turnoEntradaDto, @PathVariable Long id) {
+    public ResponseEntity<TurnoSalidaDto> actualizarTurno(@RequestBody @Valid TurnoEntradaDto turnoEntradaDto, @PathVariable Long id) throws BadRequestException {
         return new ResponseEntity<>(turnoService.actualizarTurno(turnoEntradaDto, id), HttpStatus.OK);
     }
 
     //DELETE
     @DeleteMapping("/eliminar")//localhost:8080/turnos/eliminar?id=x
-    public ResponseEntity<?> eliminarTurno(@RequestParam Long id) {
+    public ResponseEntity<?> eliminarTurno(@RequestParam Long id) throws ResourceNotFoundException {
         turnoService.eliminarTurno(id);
         return new ResponseEntity<>("Turno eliminado correctamente", HttpStatus.NO_CONTENT);
     }

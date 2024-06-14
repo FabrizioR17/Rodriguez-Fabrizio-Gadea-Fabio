@@ -18,7 +18,6 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
 
 import java.util.List;
@@ -44,9 +43,10 @@ public class TurnoService implements ITurnoService {
     public TurnoSalidaDto registrarTurno(TurnoEntradaDtoId turnoEntradaDtoId) throws BadRequestException {
 
         LOGGER.info("Datos de TurnoEntradaDto: " + turnoEntradaDtoId);
-        TurnoSalidaDto turnoSalidaDto = null;
+        TurnoSalidaDto turnoSalidaDto;
         Long idPaciente = turnoEntradaDtoId.getIdPaciente();
         Long idOdontologo = turnoEntradaDtoId.getIdOdontologo();
+
 
         PacienteSalidaDto pacienteSalidaDto = pacienteService.buscarPacientePorId(idPaciente);
         OdontologoSalidaDto odontologoSalidaDto = odontologoService.buscarOdontologoPorId(idOdontologo);
@@ -54,25 +54,23 @@ public class TurnoService implements ITurnoService {
         if (pacienteSalidaDto != null && odontologoSalidaDto != null) {
 
             Paciente paciente = modelMapper.map(pacienteSalidaDto, Paciente.class);
-            paciente.setId(idPaciente);
             Odontologo odontologo = modelMapper.map(odontologoSalidaDto, Odontologo.class);
-            odontologo.setId(idOdontologo);
 
             Turno turno = new Turno();
             turno.setFechaHora(turnoEntradaDtoId.getFechaHora());
             turno.setPaciente(paciente);
             turno.setOdontologo(odontologo);
 
-            Turno savedTurno = turnoRepository.save(turno);
-
-            turnoSalidaDto = modelMapper.map(savedTurno, TurnoSalidaDto.class);
+            turnoSalidaDto = modelMapper.map(turnoRepository.save(turno), TurnoSalidaDto.class);
             turnoSalidaDto.setPacienteSalidaDto(modelMapper.map(paciente, PacienteSalidaDto.class));
             turnoSalidaDto.setOdontologoSalidaDto(modelMapper.map(odontologo, OdontologoSalidaDto.class));
 
-        }else if (pacienteSalidaDto == null){
-            throw new BadRequestException("El id de paciente no existe en la base de datos. id: " + idPaciente);
+        }else if (pacienteSalidaDto == null && odontologoSalidaDto == null){
+            throw new BadRequestException("El Paciente y Odontologo buscados, no existen en la base de datos. id Paciente: " + idPaciente + idOdontologo);
+        }else if(odontologoSalidaDto == null){
+            throw new BadRequestException("El Odontologo no se encuentra en la base de datos. id: " + idOdontologo);
         }else{
-                throw new BadRequestException("El id de odontologo no se encuentra en la base de datos. id: " + idOdontologo);
+            throw new BadRequestException("El Paciente no se encuentra en la base de datos. id: " + idPaciente);
         }
 
 
@@ -114,15 +112,17 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
-    public void eliminarTurno(Long id) {
+    public void eliminarTurno(Long id) throws ResourceNotFoundException {
         if (buscarTurnoPorId(id) != null) {
             turnoRepository.deleteById(id);
             LOGGER.warn("Se ha eliminado el turno con id {}", id);
+        }else{
+            throw new ResourceNotFoundException("No existe registro de paciente en base de datos con el id que buscas: " + id);
         }
     }
 
     @Override
-    public TurnoSalidaDto actualizarTurno(TurnoEntradaDto turnoEntradaDto, Long id) {
+    public TurnoSalidaDto actualizarTurno(TurnoEntradaDto turnoEntradaDto, Long id) throws BadRequestException {
         Turno turnoRecibido = modelMapper.map(turnoEntradaDto, Turno.class);
         Turno turnoAModificar = turnoRepository.findById(id).orElse(null);
         TurnoSalidaDto turnoSalidaDto = null;
@@ -131,8 +131,8 @@ public class TurnoService implements ITurnoService {
             turnoRecibido.setId(turnoAModificar.getId());
             turnoRecibido.getOdontologo().setId(turnoAModificar.getOdontologo().getId());
             turnoRecibido.getPaciente().setId(turnoAModificar.getPaciente().getId());
+            turnoRecibido.getPaciente().getDomicilio().setId(turnoAModificar.getPaciente().getDomicilio().getId());
             turnoAModificar = turnoRecibido;
-
             turnoRepository.save(turnoAModificar);
             turnoSalidaDto = modelMapper.map(turnoAModificar, TurnoSalidaDto.class);
             turnoSalidaDto.setPacienteSalidaDto(modelMapper.map(turnoAModificar.getPaciente(), PacienteSalidaDto.class));
@@ -141,6 +141,7 @@ public class TurnoService implements ITurnoService {
             LOGGER.warn("Turno modificado: {}", JsonPrinter.toString(turnoSalidaDto));
         } else {
             LOGGER.error("No fue posible modificar el turno porque no se encuentra en la base de datos");
+            throw new BadRequestException("No fue posible modificar el turno porque no se encuentra en la base de datos" + turnoAModificar);
         }
 
         return turnoSalidaDto;

@@ -48,8 +48,5 @@ public class TurnoSalidaDto {
         this.fechaHora = fechaHora;
     }
 
-    @Override
-    public String toString() {
-        return "\n Paciente: " + pacienteSalidaDto + " - Odontologo: " + odontologoSalidaDto + " - Fecha y hora: " + fechaHora ;
-    }
+
 }
