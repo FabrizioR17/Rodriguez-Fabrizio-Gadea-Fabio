@@ -49,8 +49,5 @@ public class OdontologoSalidaDto {
         this.apellido = apellido;
     }
 
-    @Override
-    public String toString() {
-        return "\nnumeroMatricula: " + numeroMatricula + " - Nombre: " + nombre + " - Apellido: " + apellido;
-    }
+
 }

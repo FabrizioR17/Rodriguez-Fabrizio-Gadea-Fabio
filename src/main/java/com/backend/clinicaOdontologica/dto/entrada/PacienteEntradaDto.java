@@ -78,8 +78,4 @@ public class PacienteEntradaDto {
         this.domicilioEntradaDto = domicilioEntradaDto;
     }
 
-    @Override
-    public String toString() {
-        return "\nNombre: " + nombre + " - Apellido: " + apellido + " - DNI: " + dni + " - Fechas de ingreso: " + fechaIngreso + " - Domicilio: " + domicilioEntradaDto;
-    }
 }

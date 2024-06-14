@@ -88,16 +88,3 @@ public class OdontologoService implements IOdontologoService {
 }
 
 
-  /*  @Override
-    public OdontologoSalidaDto registrarOdontologo(OdontologoEntradaDto odontologoEntradaDto) {
-        //return odontologoIDao.registrar(odontologoEntradaDto);
-        return null;
-    }
-
-    @Override
-    public List<OdontologoSalidaDto> listarOdontologos() {
-       // return odontologoIDao.listarTodos();
-        return null;
-  */
-
-

@@ -26,9 +26,6 @@ public class PacienteService implements IPacienteService {
         configureMapping();
     }
 
-    // @Override
-    // public Paciente registrarPaciente(Paciente paciente) { return pacienteIDao.registrar(paciente); }
-
     @Override
     public PacienteSalidaDto registrarPaciente(PacienteEntradaDto pacienteEntradaDto) {
         LOGGER.info("PacienteEntradaDTO: " +
