@@ -26,7 +26,6 @@ async function fetchTurno(id) {
             document.getElementById('id').value = turno.id;
             document.getElementById('paciente').value = `${paciente.nombre} ${paciente.apellido}`;
             document.getElementById('fechaHora').value = turno.fechaHora.replace(' ', 'T');
-
             document.getElementById('pacienteId').value = paciente.id;
             document.getElementById('pacienteNombre').value = paciente.nombre;
             document.getElementById('pacienteApellido').value = paciente.apellido;
