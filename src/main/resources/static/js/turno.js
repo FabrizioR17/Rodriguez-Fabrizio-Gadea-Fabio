@@ -31,6 +31,8 @@ async function fetchTurnos() {
                 odontologoP.innerHTML = `<strong>Odontólogo:</strong> ${odontologo.nombre} ${odontologo.apellido}`;
                 const pacienteP = document.createElement("p");
                 pacienteP.innerHTML = `<strong>Paciente:</strong> ${paciente.nombre} ${paciente.apellido}`;
+
+                let fechaHora = turno.fechaHora.replace('T', ' ');
                 const fechaHoraP = document.createElement("p");
                 fechaHoraP.innerHTML = `<strong>Fecha y Hora:</strong> ${turno.fechaHora}`;
 
