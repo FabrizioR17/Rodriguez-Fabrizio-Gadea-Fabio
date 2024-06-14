@@ -129,7 +129,7 @@ public class TurnoService implements ITurnoService {
 
         if (turnoAModificar != null) {
             turnoRecibido.setId(turnoAModificar.getId());
-            turnoRecibido.getOdontologo().setId(turnoAModificar.getOdontologo().getId());
+            turnoRecibido.getOdontologo().setId(turnoEntradaDto.getOdontologoEntradaDto().getId());
             turnoRecibido.getPaciente().setId(turnoAModificar.getPaciente().getId());
             turnoRecibido.getPaciente().getDomicilio().setId(turnoAModificar.getPaciente().getDomicilio().getId());
             turnoAModificar = turnoRecibido;

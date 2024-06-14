@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 public class TurnoEntradaDto {
 
+    private Long id;
     @NotNull(message = "El paciente no puede ser nulo")
     @Valid
     private PacienteEntradaDto pacienteEntradaDto;
@@ -28,6 +29,14 @@ public class TurnoEntradaDto {
         this.fechaHora = fechaHora;
         this.odontologoEntradaDto = odontologoEntradaDto;
         this.pacienteEntradaDto = pacienteEntradaDto;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public PacienteEntradaDto getPacienteEntradaDto() {

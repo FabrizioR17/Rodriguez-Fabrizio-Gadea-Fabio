@@ -6,6 +6,8 @@ import javax.validation.constraints.Size;
 
 public class OdontologoEntradaDto {
 
+    private Long id;
+
     @Positive(message = "El numero de matricula no puede ser menor a 0 o nulo")
     private int numeroMatricula;
 
@@ -24,6 +26,14 @@ public class OdontologoEntradaDto {
         this.numeroMatricula = numeroMatricula;
         this.nombre = nombre;
         this.apellido = apellido;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getNumeroMatricula() {
