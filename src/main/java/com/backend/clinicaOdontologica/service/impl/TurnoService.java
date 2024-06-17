@@ -74,7 +74,7 @@ public class TurnoService implements ITurnoService {
         }
 
 
-        LOGGER.info("TurnoSalidaDto: " + turnoSalidaDto);
+        LOGGER.info("TurnoSalidaDto: {}", JsonPrinter.toString(turnoSalidaDto));
 
         return turnoSalidaDto;
 
@@ -90,7 +90,7 @@ public class TurnoService implements ITurnoService {
                     return dto;
                 })
                 .toList();
-        LOGGER.info("Listado de todos los turnos: " + turnos);
+        LOGGER.info("Listado de todos los turnos: {}", JsonPrinter.toString(turnos));
         return turnos;
     }
 
