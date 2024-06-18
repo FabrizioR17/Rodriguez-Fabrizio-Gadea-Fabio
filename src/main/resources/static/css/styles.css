@@ -87,7 +87,7 @@ nav ul li a {
     height: 350px;
 }
 
-/* Estiloss para el texto dentro del slider */
+/* Estilos para el texto dentro del slider */
 .texto {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -129,8 +129,9 @@ footer {
 }
 
 .contacto, .informacion, .descargar {
-    flex: 1;
-    padding: 0 120px;
+
+    padding: 0 70px;
+
 }
 
 .contacto h3, .informacion h3, .descargar h3 {
@@ -152,7 +153,58 @@ footer {
     text-decoration: none;
 }
 
-.descargar a img  {
-    width: 70px;
+.contacto a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contacto a:link,
+.contacto a:visited,
+.contacto a:hover,
+.contacto a:active {
+    color: #1c86ee;
+}
+
+.descargar a img {
+    width: 100px;
     height: auto;
 }
+
+/* Estilos para la barra de email y el botón de enviar */
+.informacion form {
+    display: flex;
+    align-items: center;
+}
+
+.informacion input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.informacion input[type="email"]:focus {
+    border-color: #1e90ff;
+}
+
+.informacion button {
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.informacion button:hover {
+    background-color: #1c86ee;
+}
+
