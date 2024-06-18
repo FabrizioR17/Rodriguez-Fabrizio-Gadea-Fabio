@@ -1,4 +1,4 @@
-# 🦷Proyecto Odontológico - Sistema de Reserva de Citas🦷
+# Proyecto Odontológico - Sistema de Reserva de Citas 🦷🦷
 
 Este proyecto es parte del curso de backend de Digital House y tiene como objetivo desarrollar un sistema de reserva de citas para una clínica odontológica. La aplicación web permite a los pacientes reservar turnos, acceder a información del staff médico y gestionar sus citas de manera eficiente.
 
