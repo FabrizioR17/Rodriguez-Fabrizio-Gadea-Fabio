@@ -34,7 +34,7 @@ async function fetchTurnos() {
 
                 let fechaHora = turno.fechaHora.replace('T', ' ');
                 const fechaHoraP = document.createElement("p");
-                fechaHoraP.innerHTML = `<strong>Fecha y Hora:</strong> ${turno.fechaHora}`;
+                fechaHoraP.innerHTML = `<strong>Fecha y Hora:</strong> ${fechaHora}`;
 
                 const buttonsDiv = document.createElement("div");
                 buttonsDiv.className = "buttons-turno";
@@ -114,4 +114,3 @@ async function eliminarTurno(id) {
 }
 
 document.addEventListener('DOMContentLoaded', fetchTurnos);
-
