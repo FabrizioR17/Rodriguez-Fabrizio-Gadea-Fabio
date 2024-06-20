@@ -50,4 +50,9 @@ public class OdontologoSalidaDto {
     }
 
 
+    @Override
+    public String toString() {
+        return "\nnumeroMatricula: " + numeroMatricula + " - nombre: " + nombre + " - apellido: " + apellido;
+    }
+
 }

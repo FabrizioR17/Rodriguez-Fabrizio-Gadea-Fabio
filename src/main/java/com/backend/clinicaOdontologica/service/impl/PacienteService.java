@@ -3,6 +3,8 @@ package com.backend.clinicaOdontologica.service.impl;
 import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.clinicaOdontologica.dto.salida.PacienteSalidaDto;
 import com.backend.clinicaOdontologica.entity.Paciente;
+import com.backend.clinicaOdontologica.exceptions.BadRequestException;
+import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;
 import com.backend.clinicaOdontologica.repository.PacienteRepository;
 import com.backend.clinicaOdontologica.service.IPacienteService;
 import com.backend.clinicaOdontologica.utils.JsonPrinter;
@@ -28,20 +30,18 @@ public class PacienteService implements IPacienteService {
 
     @Override
     public PacienteSalidaDto registrarPaciente(PacienteEntradaDto pacienteEntradaDto) {
-        LOGGER.info("PacienteEntradaDTO: " +
-                pacienteEntradaDto);
+        LOGGER.info("PacienteEntradaDTO: {}" , JsonPrinter.toString(pacienteEntradaDto));
         Paciente paciente = modelMapper.map(pacienteEntradaDto, Paciente.class);
-        LOGGER.info("PacienteEntidad: " + paciente);
+        LOGGER.info("PacienteEntidad: {}", JsonPrinter.toString(paciente));
         PacienteSalidaDto pacienteSalidaDto = modelMapper.map(pacienteRepository.save(paciente), PacienteSalidaDto.class);
-        LOGGER.info("PacienteSalidaDTO: " + pacienteSalidaDto);
-
+        LOGGER.info("PacienteSalidaDTO: {}" , JsonPrinter.toString(pacienteSalidaDto));
         return pacienteSalidaDto;
     }
 
     @Override
     public List<PacienteSalidaDto> listarPacientes() {
         List<PacienteSalidaDto> pacientes = pacienteRepository.findAll().stream().map(paciente -> modelMapper.map(paciente, PacienteSalidaDto.class)).toList();
-        LOGGER.info("Listado de todos los pacientes: {}", pacientes);
+        LOGGER.info("Listado de todos los pacientes: {}", JsonPrinter.toString(pacientes));
         return pacientes;
     }
 
@@ -60,15 +60,17 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public void eliminarPaciente(Long id){
+    public void eliminarPaciente(Long id) throws ResourceNotFoundException {
         if(buscarPacientePorId(id) != null){
             pacienteRepository.deleteById(id);
             LOGGER.warn("Se ha eliminado el paciente con id {}", id);
+        }else{
+            throw new ResourceNotFoundException("No fue posible eliminar el paciente con id " + id + " porque no se encuentra en la base de datos.");
         }
     }
 
     @Override
-    public PacienteSalidaDto actualizarPaciente(PacienteEntradaDto pacienteEntradaDto, Long id) {
+    public PacienteSalidaDto actualizarPaciente(PacienteEntradaDto pacienteEntradaDto, Long id)  throws BadRequestException {
 
         Paciente pacienteRecibido = modelMapper.map(pacienteEntradaDto, Paciente.class);
         Paciente pacienteAActualizar = pacienteRepository.findById(id).orElse(null);
@@ -85,6 +87,7 @@ public class PacienteService implements IPacienteService {
 
         } else {
             LOGGER.error("No fue posible actualizar el paciente porque no se encuentra en nuestra base de datos");
+            throw new BadRequestException("No fue posible actualizar el paciente porque no se encuentra en nuestra base de datos" + pacienteEntradaDto);
         }
         return pacienteSalidaDto;
     }

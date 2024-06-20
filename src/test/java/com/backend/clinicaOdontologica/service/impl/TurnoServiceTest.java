@@ -1,14 +1,12 @@
 package com.backend.clinicaOdontologica.service.impl;
 
-import com.backend.clinicaOdontologica.dto.entrada.DomicilioEntradaDto;
-import com.backend.clinicaOdontologica.dto.entrada.OdontologoEntradaDto;
-import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
-import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDtoId;
+import com.backend.clinicaOdontologica.dto.entrada.*;
 import com.backend.clinicaOdontologica.dto.salida.OdontologoSalidaDto;
 import com.backend.clinicaOdontologica.dto.salida.PacienteSalidaDto;
 import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaOdontologica.exceptions.BadRequestException;
 
+import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -38,19 +36,20 @@ class TurnoServiceTest {
     @Autowired
     private OdontologoService odontologoService;
 
+
+
     private static PacienteSalidaDto pacienteSalidaDto;
     private static OdontologoSalidaDto odontologoSalidaDto;
-
+    private static TurnoSalidaDto turnoSalidaDto;
     @BeforeAll
-    static void setup(@Autowired PacienteService pacienteService, @Autowired OdontologoService odontologoService) {
-        // Registrar un paciente
+    static void setup(@Autowired PacienteService pacienteService, @Autowired OdontologoService odontologoService) throws BadRequestException {
         PacienteEntradaDto pacienteEntradaDto = new PacienteEntradaDto("Carolina", "Flores", 72395578, LocalDate.of(2024, 12, 15),
                 new DomicilioEntradaDto("Buendia", 282, "Lima", "Lima"));
         pacienteSalidaDto = pacienteService.registrarPaciente(pacienteEntradaDto);
 
-        // Registrar un odontólogo
-        OdontologoEntradaDto odontologoEntradaDto = new OdontologoEntradaDto(1001, "Juan", "Perez");
+        OdontologoEntradaDto odontologoEntradaDto = new OdontologoEntradaDto(123456, "Juan", "Perez");
         odontologoSalidaDto = odontologoService.registrarOdontologo(odontologoEntradaDto);
+
     }
 
     @Test
@@ -59,7 +58,6 @@ class TurnoServiceTest {
         TurnoEntradaDtoId turnoEntradaDtoId = new TurnoEntradaDtoId(pacienteSalidaDto.getId(), odontologoSalidaDto.getId(), LocalDateTime.of(2024, 8, 10, 10, 0));
         TurnoSalidaDto turnoSalidaDto = turnoService.registrarTurno(turnoEntradaDtoId);
 
-        // assert
         assertNotNull(turnoSalidaDto);
         assertNotNull(turnoSalidaDto.getId());
         assertEquals(pacienteSalidaDto.getId(), turnoSalidaDto.getPacienteSalidaDto().getId());
@@ -75,12 +73,20 @@ class TurnoServiceTest {
 
     @Test
     @Order(3)
-    void deberiaEliminarseElTurnoConId1() {
-        assertDoesNotThrow(() -> turnoService.eliminarTurno(1L));
+    void deberiaEncontrarUnTurnoConId1 (){
+        Long idTurnoABuscar = 1L;
+        TurnoSalidaDto turnoEncontrado = turnoService.buscarTurnoPorId(idTurnoABuscar);
+        assertEquals(1, turnoEncontrado.getId());
     }
 
     @Test
     @Order(4)
+    void deberiaEliminarseElTurnoConId1() throws ResourceNotFoundException {
+        assertDoesNotThrow(() -> turnoService.eliminarTurno(1L));
+    }
+
+    @Test
+    @Order(5)
     void deberiaDevolverUnaListaVaciaDeTurnos() {
         List<TurnoSalidaDto> listadoDeTurnos = turnoService.listarTurnos();
         assertTrue(listadoDeTurnos.isEmpty());
