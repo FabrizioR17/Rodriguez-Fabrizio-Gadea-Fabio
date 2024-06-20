@@ -13,58 +13,7 @@ async function fetchTurnos() {
                 const odontologo = await fetchOdontologo(turno.odontologoSalidaDto.id); // Use odontologoSalidaDto.id
                 console.log(`Fetched odontologo: ${JSON.stringify(odontologo)}`);
 
-                const card = document.createElement("div");
-                card.className = "tarjeta";
-
-                const imageDiv = document.createElement("div");
-                imageDiv.className = "imagen-turno";
-                const img = document.createElement("img");
-                img.src = "img/calendario.png";
-                img.alt = "Calendario del turno";
-                imageDiv.appendChild(img);
-
-                const infoDiv = document.createElement("div");
-                infoDiv.className = "informacion-turno";
-                const turnoIdP = document.createElement("p");
-                turnoIdP.innerHTML = `<strong>ID Turno:</strong> ${turno.id}`;
-                const odontologoP = document.createElement("p");
-                odontologoP.innerHTML = `<strong>Odontólogo:</strong> ${odontologo.nombre} ${odontologo.apellido}`;
-                const pacienteP = document.createElement("p");
-                pacienteP.innerHTML = `<strong>Paciente:</strong> ${paciente.nombre} ${paciente.apellido}`;
-
-                let fechaHora = turno.fechaHora.replace('T', ' ');
-                const fechaHoraP = document.createElement("p");
-                fechaHoraP.innerHTML = `<strong>Fecha y Hora:</strong> ${fechaHora}`;
-
-                const buttonsDiv = document.createElement("div");
-                buttonsDiv.className = "buttons-turno";
-
-                const editButton = document.createElement("button");
-                editButton.textContent = "Editar";
-                editButton.className = "btn-editar";
-                editButton.onclick = () => window.location.href = `editarTurno.html?id=${turno.id}`;
-
-                const deleteButton = document.createElement("button");
-                deleteButton.textContent = "Eliminar";
-                deleteButton.className = "btn-eliminar";
-                deleteButton.onclick = () => {
-                    if (confirm("¿Está seguro de que desea eliminar este turno?")) {
-                        eliminarTurno(turno.id);
-                    }
-                };
-
-                buttonsDiv.appendChild(editButton);
-                buttonsDiv.appendChild(deleteButton);
-
-                infoDiv.appendChild(turnoIdP);
-                infoDiv.appendChild(odontologoP);
-                infoDiv.appendChild(pacienteP);
-                infoDiv.appendChild(fechaHoraP);
-                infoDiv.appendChild(buttonsDiv);
-
-                card.appendChild(imageDiv);
-                card.appendChild(infoDiv);
-
+                const card = crearTarjetaTurno(turno, paciente, odontologo);
                 section.appendChild(card);
             }
         } else {
@@ -73,6 +22,62 @@ async function fetchTurnos() {
     } catch (error) {
         section.innerHTML = `<p>Error: ${error.message}</p>`;
     }
+}
+
+function crearTarjetaTurno(turno, paciente, odontologo) {
+    const card = document.createElement("div");
+    card.className = "tarjeta";
+
+    const imageDiv = document.createElement("div");
+    imageDiv.className = "imagen-turno";
+    const img = document.createElement("img");
+    img.src = "img/calendario.png";
+    img.alt = "Calendario del turno";
+    imageDiv.appendChild(img);
+
+    const infoDiv = document.createElement("div");
+    infoDiv.className = "informacion-turno";
+    const turnoIdP = document.createElement("p");
+    turnoIdP.innerHTML = `<strong>ID Turno:</strong> ${turno.id}`;
+    const odontologoP = document.createElement("p");
+    odontologoP.innerHTML = `<strong>Odontólogo:</strong> ${odontologo.nombre} ${odontologo.apellido}`;
+    const pacienteP = document.createElement("p");
+    pacienteP.innerHTML = `<strong>Paciente:</strong> ${paciente.nombre} ${paciente.apellido}`;
+
+    let fechaHora = turno.fechaHora.replace('T', ' ');
+    const fechaHoraP = document.createElement("p");
+    fechaHoraP.innerHTML = `<strong>Fecha y Hora:</strong> ${fechaHora}`;
+
+    const buttonsDiv = document.createElement("div");
+    buttonsDiv.className = "buttons-turno";
+
+    const editButton = document.createElement("button");
+    editButton.textContent = "Editar";
+    editButton.className = "btn-editar";
+    editButton.onclick = () => window.location.href = `editarTurno.html?id=${turno.id}`;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Eliminar";
+    deleteButton.className = "btn-eliminar";
+    deleteButton.onclick = () => {
+        if (confirm("¿Está seguro de que desea eliminar este turno?")) {
+            eliminarTurno(turno.id);
+        }
+    };
+
+    buttonsDiv.appendChild(editButton);
+    buttonsDiv.appendChild(deleteButton);
+
+    infoDiv.appendChild(turnoIdP);
+    infoDiv.appendChild(odontologoP);
+    infoDiv.appendChild(pacienteP);
+    infoDiv.appendChild(fechaHoraP);
+    infoDiv.appendChild(buttonsDiv);
+
+    card.appendChild(imageDiv);
+    card.appendChild(infoDiv);
+
+    return card;
 }
 
 async function fetchPaciente(id) {
@@ -113,4 +118,31 @@ async function eliminarTurno(id) {
     }
 }
 
+async function buscarTurnoPorId(event) {
+    const section = document.getElementById("turnos-section");
+    const input = document.getElementById('search-bar').value.trim();
+
+    if (input) {
+        try {
+            const response = await fetch(`http://localhost:8080/turnos/${input}`);
+            if (response.ok) {
+                const turno = await response.json();
+                const paciente = await fetchPaciente(turno.pacienteSalidaDto.id);
+                const odontologo = await fetchOdontologo(turno.odontologoSalidaDto.id);
+                section.innerHTML = '';
+                const card = crearTarjetaTurno(turno, paciente, odontologo);
+                section.appendChild(card);
+            } else {
+                section.innerHTML = '<p>No se encontró ningún turno con ese ID</p>';
+            }
+        } catch (error) {
+            section.innerHTML = `<p>Error: ${error.message}</p>`;
+        }
+    } else {
+        fetchTurnos();
+    }
+}
+
+// Llamar a la función cuando se carga la página
 document.addEventListener('DOMContentLoaded', fetchTurnos);
+

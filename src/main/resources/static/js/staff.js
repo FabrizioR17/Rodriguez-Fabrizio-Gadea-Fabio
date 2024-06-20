@@ -7,50 +7,7 @@ async function fetchOdontologos() {
             const odontologos = await response.json();
             section.innerHTML = '';
             odontologos.forEach(odontologo => {
-                const card = document.createElement("div");
-                card.className = "tarjeta";
-
-                const imageDiv = document.createElement("div");
-                imageDiv.className = "imagen-odontologo";
-                const img = document.createElement("img");
-                img.src = "img/doctor.jpeg";
-                img.alt = "Foto del odontólogo";
-                imageDiv.appendChild(img);
-
-                const infoDiv = document.createElement("div");
-                infoDiv.className = "informacion-odontologo";
-                const nameH2 = document.createElement("h2");
-                nameH2.textContent = `ID: ${odontologo.id} - ${odontologo.nombre} ${odontologo.apellido}`;
-                const matriculaP = document.createElement("p");
-                matriculaP.innerHTML = `<strong>Número de Matrícula:</strong> ${odontologo.numeroMatricula}`;
-
-                const buttonsDiv = document.createElement("div");
-                buttonsDiv.className = "buttons-odontologo";
-
-                const editButton = document.createElement("button");
-                editButton.textContent = "Editar";
-                editButton.className = "btn-editar";
-                editButton.onclick = () => window.location.href = `editarOdontologo.html?id=${odontologo.id}`;
-
-                const deleteButton = document.createElement("button");
-                deleteButton.textContent = "Eliminar";
-                deleteButton.className = "btn-eliminar";
-                deleteButton.onclick = () => {
-                    if (confirm("¿Está seguro de que desea eliminar este odontólogo?")) {
-                        eliminarOdontologo(odontologo.id);
-                    }
-                };
-
-                buttonsDiv.appendChild(editButton);
-                buttonsDiv.appendChild(deleteButton);
-
-                infoDiv.appendChild(nameH2);
-                infoDiv.appendChild(matriculaP);
-                infoDiv.appendChild(buttonsDiv);
-
-                card.appendChild(imageDiv);
-                card.appendChild(infoDiv);
-
+                const card = crearTarjetaOdontologo(odontologo);
                 section.appendChild(card);
             });
         } else {
@@ -59,6 +16,54 @@ async function fetchOdontologos() {
     } catch (error) {
         section.innerHTML = `<p>Error: ${error.message}</p>`;
     }
+}
+
+function crearTarjetaOdontologo(odontologo) {
+    const card = document.createElement("div");
+    card.className = "tarjeta";
+
+    const imageDiv = document.createElement("div");
+    imageDiv.className = "imagen-odontologo";
+    const img = document.createElement("img");
+    img.src = "img/doctor.jpeg";
+    img.alt = "Foto del odontólogo";
+    imageDiv.appendChild(img);
+
+    const infoDiv = document.createElement("div");
+    infoDiv.className = "informacion-odontologo";
+    const nameH2 = document.createElement("h2");
+    nameH2.textContent = `ID: ${odontologo.id} - ${odontologo.nombre} ${odontologo.apellido}`;
+    const matriculaP = document.createElement("p");
+    matriculaP.innerHTML = `<strong>Número de Matrícula:</strong> ${odontologo.numeroMatricula}`;
+
+    const buttonsDiv = document.createElement("div");
+    buttonsDiv.className = "buttons-odontologo";
+
+    const editButton = document.createElement("button");
+    editButton.textContent = "Editar";
+    editButton.className = "btn-editar";
+    editButton.onclick = () => window.location.href = `editarOdontologo.html?id=${odontologo.id}`;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Eliminar";
+    deleteButton.className = "btn-eliminar";
+    deleteButton.onclick = () => {
+        if (confirm("¿Está seguro de que desea eliminar este odontólogo?")) {
+            eliminarOdontologo(odontologo.id);
+        }
+    };
+
+    buttonsDiv.appendChild(editButton);
+    buttonsDiv.appendChild(deleteButton);
+
+    infoDiv.appendChild(nameH2);
+    infoDiv.appendChild(matriculaP);
+    infoDiv.appendChild(buttonsDiv);
+
+    card.appendChild(imageDiv);
+    card.appendChild(infoDiv);
+
+    return card;
 }
 
 async function eliminarOdontologo(id) {
@@ -76,6 +81,30 @@ async function eliminarOdontologo(id) {
         alert(`Error: ${error.message}`);
     }
 }
+
+async function buscarOdontologoPorId(event) {
+    const section = document.getElementById("odontologos-section");
+    const input = document.getElementById('search-bar').value.trim();
+
+    if (input) {
+        try {
+            const response = await fetch(`http://localhost:8080/odontologos/${input}`);
+            if (response.ok) {
+                const odontologo = await response.json();
+                section.innerHTML = '';
+                const card = crearTarjetaOdontologo(odontologo);
+                section.appendChild(card);
+            } else {
+                section.innerHTML = '<p>No se encontró ningún odontólogo con ese ID</p>';
+            }
+        } catch (error) {
+            section.innerHTML = `<p>Error: ${error.message}</p>`;
+        }
+    } else {
+        fetchOdontologos();
+    }
+}
+
 
 // Llamar a la función cuando se carga la página
 document.addEventListener('DOMContentLoaded', fetchOdontologos);
