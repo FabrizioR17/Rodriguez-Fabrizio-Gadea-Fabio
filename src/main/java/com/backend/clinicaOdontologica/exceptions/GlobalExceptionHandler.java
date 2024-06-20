@@ -35,7 +35,6 @@ public class GlobalExceptionHandler {
         return mensaje;
 
     }
-    //Requerimiento manejo de BadRequestException
 
     @ExceptionHandler({MethodArgumentNotValidException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -52,8 +51,5 @@ public class GlobalExceptionHandler {
         return mensaje;
     }
 
-
-
-//HttpMessageNotReadableException
 
 }

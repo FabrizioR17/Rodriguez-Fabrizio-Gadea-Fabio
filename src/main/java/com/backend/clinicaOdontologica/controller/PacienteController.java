@@ -2,9 +2,9 @@ package com.backend.clinicaOdontologica.controller;
 
 import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.clinicaOdontologica.dto.salida.PacienteSalidaDto;
+import com.backend.clinicaOdontologica.exceptions.BadRequestException;
 import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;
 import com.backend.clinicaOdontologica.service.IPacienteService;
-import org.slf4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,20 +34,20 @@ public class PacienteController {
     }
 
 
-    @GetMapping("/{id}")//localhost:8080/pacientes/x
+    @GetMapping("/{id}")
     public ResponseEntity<PacienteSalidaDto> buscarPacientePorId(@PathVariable Long id){
         return new ResponseEntity<>(pacienteService.buscarPacientePorId(id), HttpStatus.OK);
     }
 
     //PUT
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<PacienteSalidaDto> actualizarPaciente(@RequestBody @Valid PacienteEntradaDto pacienteEntradaDto, @PathVariable Long id){
+    public ResponseEntity<PacienteSalidaDto> actualizarPaciente(@RequestBody @Valid PacienteEntradaDto pacienteEntradaDto, @PathVariable Long id) throws BadRequestException {
         return new ResponseEntity<>(pacienteService.actualizarPaciente(pacienteEntradaDto, id), HttpStatus.OK);
     }
 
     //DELETE
-    @DeleteMapping("/eliminar")//localhost:8080/pacientes/eliminar?id=x
-    public ResponseEntity<?> eliminarPaciente(@RequestParam Long id){
+    @DeleteMapping("/eliminar")
+    public ResponseEntity<?> eliminarPaciente(@RequestParam Long id) throws ResourceNotFoundException{
             pacienteService.eliminarPaciente(id);
             return new ResponseEntity<>("Paciente eliminado correctamente", HttpStatus.NO_CONTENT);
     }

@@ -66,11 +66,11 @@ public class TurnoService implements ITurnoService {
             turnoSalidaDto.setOdontologoSalidaDto(modelMapper.map(odontologo, OdontologoSalidaDto.class));
 
         }else if (pacienteSalidaDto == null && odontologoSalidaDto == null){
-            throw new BadRequestException("El Paciente y Odontologo buscados, no existen en la base de datos. id Paciente: " + idPaciente + idOdontologo);
+            throw new BadRequestException("El Paciente y Odontologo buscados para registrar turno, no existen en la base de datos. id Paciente: " + idPaciente + idOdontologo);
         }else if(odontologoSalidaDto == null){
-            throw new BadRequestException("El Odontologo no se encuentra en la base de datos. id: " + idOdontologo);
+            throw new BadRequestException("El Odontologo buscado para registrar turno, no se encuentra en la base de datos. id: " + idOdontologo);
         }else{
-            throw new BadRequestException("El Paciente no se encuentra en la base de datos. id: " + idPaciente);
+            throw new BadRequestException("El Pacientebuscado para registrar turno, no se encuentra en la base de datos. id: " + idPaciente);
         }
 
 

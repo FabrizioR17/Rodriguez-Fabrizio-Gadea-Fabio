@@ -1,8 +1,5 @@
 package com.backend.clinicaOdontologica.dto.salida;
 
-import com.backend.clinicaOdontologica.entity.Odontologo;
-import com.backend.clinicaOdontologica.entity.Paciente;
-
 import java.time.LocalDateTime;
 
 public class TurnoSalidaDto {
@@ -48,5 +45,9 @@ public class TurnoSalidaDto {
         this.fechaHora = fechaHora;
     }
 
+    @Override
+    public String toString() {
 
+        return "\n fechaHora: " + fechaHora + " - ID: " + id + " - pacienteSalidaDto: " + pacienteSalidaDto + " - odontologoSalidaDto: " + odontologoSalidaDto ;
+    }
 }

@@ -3,6 +3,7 @@ package com.backend.clinicaOdontologica.service.impl;
 import com.backend.clinicaOdontologica.dto.entrada.DomicilioEntradaDto;
 import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.clinicaOdontologica.dto.salida.PacienteSalidaDto;
+import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Order;
@@ -35,7 +36,6 @@ class PacienteServiceTest {
 
         PacienteSalidaDto pacienteSalidaDto = pacienteService.registrarPaciente(pacienteEntradaDto);
 
-        //assert
         assertNotNull(pacienteSalidaDto);
         assertNotNull(pacienteSalidaDto.getId());
         assertEquals("Juan", pacienteSalidaDto.getNombre());
@@ -51,18 +51,23 @@ class PacienteServiceTest {
 
     @Test
     @Order(3)
-    void deberiaEliminarseElPacienteConId1(){
-
-        assertDoesNotThrow(() -> pacienteService.eliminarPaciente(1L));
+    void deberiaEncontrarUnPacienteConId1() {
+        Long pacienteABuscar = 1L;
+        PacienteSalidaDto pacienteEncontrado = pacienteService.buscarPacientePorId(pacienteABuscar);
+        assertEquals(1, pacienteEncontrado.getId());
     }
 
     @Test
     @Order(4)
+    void deberiaEliminarseElPacienteConId1() throws ResourceNotFoundException {
+        assertDoesNotThrow(() -> pacienteService.eliminarPaciente(1L));
+    }
+
+    @Test
+    @Order(5)
     void deberiaDevolverUnaListaVaciaDePacientes(){
         List<PacienteSalidaDto> listadoDePacientes = pacienteService.listarPacientes();
         assertTrue(listadoDePacientes.isEmpty());
     }
-
-
 
 }

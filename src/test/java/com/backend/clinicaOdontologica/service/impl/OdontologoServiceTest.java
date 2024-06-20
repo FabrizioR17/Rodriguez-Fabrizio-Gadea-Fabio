@@ -1,39 +1,7 @@
-//package com.backend.clinicaOdontologica.service.impl;
-//
-//import com.backend.clinicaOdontologica.dto.entrada.OdontologoEntradaDto;
-//import com.backend.clinicaOdontologica.dto.salida.OdontologoSalidaDto;
-//import org.junit.jupiter.api.Test;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//
-//import static org.junit.Assert.*;
-//
-//@SpringBootTest
-//public class OdontologoServiceTest {
-//
-//    @Autowired
-//    private OdontologoService odontologoService;
-//
-//   @Test
-//    void deberiaRetornarseUnaListaNoVaciaDeOdontologosEnH2() {
-//        assertFalse(odontologoService.listarOdontologos().isEmpty());
-//    }
-//
-//    @Test
-//    void deberiaRegistrarseUnOdontologoYObtenerElIdCorrespondiente() {
-//
-//        OdontologoEntradaDto odontologo = new OdontologoEntradaDto( 12345, "Juan", "Perez");
-//
-//        OdontologoSalidaDto odontolgoRegistrado = odontologoService.registrarOdontologo(odontologo);
-//
-//        assertNotNull(odontolgoRegistrado.getId());
-//
-//    }
-//
-//}
 package com.backend.clinicaOdontologica.service.impl;
 import com.backend.clinicaOdontologica.dto.entrada.OdontologoEntradaDto;
 import com.backend.clinicaOdontologica.dto.salida.OdontologoSalidaDto;
+import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Order;
@@ -56,11 +24,10 @@ class OdontologoServiceTest {
 
     @Test
     @Order(1)
-    void deberiaRegistrarseUnOdontologoDeNombreJuan_yRetornarSuId() {
+    void deberiaRegistrarseUnOdontologoDeNombreJuan_yRetornarSuId(){
         OdontologoEntradaDto odontologoEntradaDto = new OdontologoEntradaDto(1001, "Juan", "Perez");
         OdontologoSalidaDto odontologoSalidaDto = odontologoService.registrarOdontologo(odontologoEntradaDto);
 
-        // assert
         assertNotNull(odontologoSalidaDto);
         assertNotNull(odontologoSalidaDto.getId());
         assertEquals("Juan", odontologoSalidaDto.getNombre());
@@ -75,12 +42,20 @@ class OdontologoServiceTest {
 
     @Test
     @Order(3)
-    void deberiaEliminarseElOdontologoConId1() {
-        assertDoesNotThrow(() -> odontologoService.eliminarOdontologo(1L));
+    void deberiaEncontrarUnOdontologoConId1() {
+        Long odontologoABuscar = 1L;
+        OdontologoSalidaDto odontologoEncontrado = odontologoService.buscarOdontologoPorId(odontologoABuscar);
+        assertEquals(1, odontologoEncontrado.getId());
     }
 
     @Test
     @Order(4)
+    void deberiaEliminarseElOdontologoConId1() throws ResourceNotFoundException {
+        assertDoesNotThrow(() -> odontologoService.eliminarOdontologo(1L));
+    }
+
+    @Test
+    @Order(5)
     void deberiaDevolverUnaListaVaciaDeOdontologos() {
         List<OdontologoSalidaDto> listadoDeOdontologos = odontologoService.listarOdontologos();
         assertTrue(listadoDeOdontologos.isEmpty());

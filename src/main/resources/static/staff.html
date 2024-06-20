@@ -19,6 +19,7 @@
             <li><a href="pacientes.html">Pacientes</a></li>
             <li><a href="turno.html">Turnos</a></li>
             <li><a href="registrarTurno.html">Reserva tu turno</a></li>
+            <li><a href="register.html">Registrar Paciente o Odontologo</a></li>
         </ul>
     </nav>
 </header>
@@ -30,9 +31,21 @@
 <footer>
     <div class="contacto">
         <h3>Contacto</h3>
+        <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Imaginaria</p>
+        <p><strong>Teléfono:</strong> +1 (234) 567-8900</p>
+        <p><strong>Síguenos en:</strong></p>
+        <a href="https://www.facebook.com" target="_blank"><img src="img/facebook.png" alt="Facebook" style="width:30px;height:30px;"></a>
+        <a href="https://www.twitter.com" target="_blank"><img src="img/twitter.png" alt="Twitter" style="width:30px;height:30px;"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="img/instagram.png" alt="Instagram" style="width:30px;height:30px;"></a>
+        <a href="https://www.linkedin.com" target="_blank"><img src="img/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;"></a>
     </div>
     <div class="informacion">
         <h3>Información</h3>
+        <p>Para recibir mayor informacion, ingresa tu email:</p>
+        <form action="submit_email.php" method="post">
+            <input type="email" name="email" placeholder="Ingresa tu email" required>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
     <div class="descargar">
         <h3>Descargar Nuestra App</h3>
@@ -44,33 +57,3 @@
 <script src="js/staff.js"></script>
 </body>
 </html>
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Test Endpoint</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<button onclick="testEndpoint()">Test Endpoint</button>-->
-<!--<div id="result"></div>-->
-
-<!--<script>-->
-<!--    async function testEndpoint() {-->
-<!--        const resultDiv = document.getElementById("result");-->
-<!--        try {-->
-<!--            const response = await fetch('http://localhost:8080/odontologos/listar');-->
-<!--            if (response.ok) {-->
-<!--                const data = await response.json();-->
-<!--                resultDiv.innerHTML = JSON.stringify(data);-->
-<!--            } else {-->
-<!--                resultDiv.innerHTML = 'Error: ' + response.statusText;-->
-<!--            }-->
-<!--        } catch (error) {-->
-<!--            resultDiv.innerHTML = 'Error: ' + error.message;-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->

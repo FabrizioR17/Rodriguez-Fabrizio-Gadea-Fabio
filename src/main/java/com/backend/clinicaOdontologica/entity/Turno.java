@@ -69,6 +69,10 @@ public class Turno {
         this.fechaHora = fechaHora;
     }
 
+    @Override
+    public String toString() {
 
+        return "\n ID: " + id +" - fechaHora: " + fechaHora + " - ID: " + id + " - paciente: " + paciente + " - odontologo: " + odontologo ;
+    }
 
 }

@@ -42,6 +42,7 @@ function validateFields() {
 
     const nameRegex = /^[a-zA-Z\s]+$/;
     const numDocRegex = /^[0-9]+$/;
+    const numMatriculaRegex = /^\d{6}$/;
     const streetRegex = /^[a-zA-Z\s]+$/;
 
     if (!nameRegex.test(nombre) || !nameRegex.test(apellido)) {
@@ -52,6 +53,13 @@ function validateFields() {
     if (!numDocRegex.test(numDoc)) {
         alert("El número de documento o matrícula no puede contener letras.");
         return false;
+    }
+
+    if (tipoPer === "Odontologo") {
+        if (!numMatriculaRegex.test(numDoc)){
+            alert("El número de matrícula no puede ser mayor, o menor, a 6 digitos.");
+            return false;
+        }
     }
 
     if (tipoPer === "Paciente") {

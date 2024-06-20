@@ -9,8 +9,8 @@ public class DomicilioEntradaDto {
     @NotBlank(message = "Debe proveerse el nombre de la calle del domicilio")
     private String calle;
 
-    @Positive(message = "El numero no puede ser nulo o menor a cero")
-    @Digits(integer = 8, fraction = 0, message = "El número debe tener como máximo 8 dígitos")
+    @Positive(message = "El número de puerta no puede ser nulo o menor a cero")
+    @Digits(integer = 8, fraction = 0, message = "El número de puertadebe tener como máximo 8 dígitos")
     private int numero;
 
     @NotBlank(message = "Debe proveerse la localidad del domicilio")
@@ -61,5 +61,8 @@ public class DomicilioEntradaDto {
         this.provincia = provincia;
     }
 
-
+    @Override
+    public String toString() {
+        return "\nCalle: " + calle + " - Numero: " + numero + " - Localidad: " + localidad + " - Provincia: " + provincia;
+    }
 }

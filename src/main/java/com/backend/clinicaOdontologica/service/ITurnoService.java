@@ -5,7 +5,6 @@ import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDtoId;
 import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaOdontologica.exceptions.BadRequestException;
 import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.util.List;
 

@@ -1,14 +1,13 @@
 package com.backend.clinicaOdontologica.dto.entrada;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class OdontologoEntradaDto {
 
     private Long id;
 
-    @Positive(message = "El numero de matricula no puede ser menor a 0 o nulo")
+    @Min(value = 100000, message = "La matricula no puede ser menor a 6 digitos")
+    @Max(value = 999999, message = "La matricula no puede ser mayor a 6 digitos")
     private int numeroMatricula;
 
     @NotBlank(message = "Debe especificarse el nombre del odontologo")
@@ -60,4 +59,8 @@ public class OdontologoEntradaDto {
         this.apellido = apellido;
     }
 
+    @Override
+    public String toString() {
+        return "\nnumeroMatricula: " + numeroMatricula + " - nombre: " + nombre + " - apellido: " + apellido;
+    }
 }
