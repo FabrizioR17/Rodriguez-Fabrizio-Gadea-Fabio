@@ -39,14 +39,17 @@ function validateFields() {
     const calle = document.getElementById("calle").value;
     const provincia = document.getElementById("provincia").value;
     const localidad = document.getElementById("localidad").value;
+    const fechaIngreso = document.getElementById("fecha-ingreso").value;
 
     const nameRegex = /^[a-zA-Z\s]+$/;
     const numDocRegex = /^[0-9]+$/;
     const numMatriculaRegex = /^\d{6}$/;
     const streetRegex = /^[a-zA-Z\s]+$/;
 
+    const today = new Date().toISOString().split('T')[0];
+
     if (!nameRegex.test(nombre) || !nameRegex.test(apellido)) {
-        alert("El nombre y el apellido no pueden contener números o caracteres epeciales.");
+        alert("El nombre y el apellido no pueden contener números o caracteres especiales.");
         return false;
     }
 
@@ -56,8 +59,8 @@ function validateFields() {
     }
 
     if (tipoPer === "Odontologo") {
-        if (!numMatriculaRegex.test(numDoc)){
-            alert("El número de matrícula no puede ser mayor, o menor, a 6 digitos.");
+        if (!numMatriculaRegex.test(numDoc)) {
+            alert("El número de matrícula debe tener exactamente 6 dígitos.");
             return false;
         }
     }
@@ -70,6 +73,11 @@ function validateFields() {
 
         if (!nameRegex.test(provincia) || !nameRegex.test(localidad)) {
             alert("La provincia y la localidad solo pueden contener letras.");
+            return false;
+        }
+
+        if (fechaIngreso < today) {
+            alert("La fecha de ingreso no puede ser anterior a la fecha actual.");
             return false;
         }
     }
@@ -135,7 +143,8 @@ async function register(event) {
             const result = await response.json();
             alert("Registro exitoso: ");
         } else {
-            messageDiv.innerHTML = `<p>Error en el registro</p>`;
+            const errorMessage = await response.text();
+            messageDiv.innerHTML = `<p>Error en el registro: ${errorMessage}</p>`;
         }
     } catch (error) {
         messageDiv.innerHTML = `<p>Error: ${error.message}</p>`;
