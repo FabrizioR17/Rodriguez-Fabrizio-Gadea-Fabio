@@ -9,7 +9,7 @@ El sistema de reserva de citas odontológicas incluye las siguientes funcionalid
 * **Reserva de Turnos**: Los pacientes pueden reservar citas en línea.
 * **Gestión de Pacientes**: Acceso a la información personal y de citas.
 * **Staff Médico**: Información sobre el equipo médico de la clínica.
-* **Autenticación de Usuarios**: Sistema de registro e inicio de sesión para pacientes.
+* **Autenticación de Usuarios**: Sistema de registro para pacientes.
 
 ## 🗂 Estructura del Proyecto
 
@@ -33,15 +33,35 @@ El backend de la aplicación está diseñado para manejar las solicitudes de los
 
 #### Funcionalidades del Backend
 
-* **Gestión de Usuarios**: Registro, listar, actualizar y eliminar pacientes.
-* **Reserva de Turnos**: Crear, listar, actualizar y cancelar turnos.
-* **Consulta de Odontologos**: Información del personal médico, registro, actualizar y eliminar odontologos.
+* **Gestión de Usuarios**: Registro, listar, buscar por id, actualizar y eliminar pacientes.
+* **Reserva de Turnos**: Crear, listar, buscar por id, actualizar y cancelar turnos.
+* **Consulta de Odontologos**: Información del personal médico, registro, buscar por id, actualizar y eliminar odontologos.
 
 ## ⚙️ Instalación y Configuración
 
 Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
-http://localhost:8080/index.html
+1. **Clona el repositorio**:
+    ```bash
+    git clone https://github.com/FabrizioR17/Rodriguez-Fabrizio-Gadea-Fabio.git
+    ```
+   
+2. **Abre el proyecto en IntelliJ IDEA**:
+    - Abre IntelliJ IDEA.
+    - Selecciona `File` -> `Open...` y navega hasta el directorio donde clonaste el repositorio. Selecciona el proyecto.
+
+3. **Ejecuta la aplicación**:
+    - Busca la clase `ClinicaOdontologicaApplication`.
+    - Haz clic derecho sobre la clase y selecciona `Run 'ClinicaOdontologicaApplication'`.
+
+4. **Abre el navegador en tu computador**:
+    - Una vez que el servidor esté corriendo, abre tu navegador y accede a: `http://localhost:8080/index.html`.
+
+## 👨‍💻 Equipo de Trabajo
+El proyecto está siendo desarrollado por:
+
+* Fabrizio Rodriguez - https://github.com/FabrizioR17
+* Fabio Gadea - https://github.com/FabioG21
 
 ## 📞 Contacto
 
